@@ -79,16 +79,17 @@
 
 
 
-<meta name="description" content="看得见远方，追的上路人">
-<meta property="og:type" content="website">
-<meta property="og:title" content="June的博客">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta name="description" content="我原以为部署Hexo的静态页面很简单，上传到服务器的某个路径，用代理服务器关联路径到某个端口，就可以访问了！这样做是ok的，但是很不Hexo。Hexo封装了上传动作，在_config.yml文件中配置上目标服务器，一个hexo deploy指令就将编译后的页面直接部署到服务器上了，省去了远程登录服务器、上传文件这些操作。 本地搭建Hexohttps://hexo.io/ 部署到服务器自动部署##">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo搭建到VPS">
+<meta property="og:url" content="http://yoursite.com/2017/11/20/hexo-deploy-vultr/index.html">
 <meta property="og:site_name" content="June的博客">
-<meta property="og:description" content="看得见远方，追的上路人">
+<meta property="og:description" content="我原以为部署Hexo的静态页面很简单，上传到服务器的某个路径，用代理服务器关联路径到某个端口，就可以访问了！这样做是ok的，但是很不Hexo。Hexo封装了上传动作，在_config.yml文件中配置上目标服务器，一个hexo deploy指令就将编译后的页面直接部署到服务器上了，省去了远程登录服务器、上传文件这些操作。 本地搭建Hexohttps://hexo.io/ 部署到服务器自动部署##">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-11-20T04:01:57.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="June的博客">
-<meta name="twitter:description" content="看得见远方，追的上路人">
+<meta name="twitter:title" content="Hexo搭建到VPS">
+<meta name="twitter:description" content="我原以为部署Hexo的静态页面很简单，上传到服务器的某个路径，用代理服务器关联路径到某个端口，就可以访问了！这样做是ok的，但是很不Hexo。Hexo封装了上传动作，在_config.yml文件中配置上目标服务器，一个hexo deploy指令就将编译后的页面直接部署到服务器上了，省去了远程登录服务器、上传文件这些操作。 本地搭建Hexohttps://hexo.io/ 部署到服务器自动部署##">
 
 
 
@@ -118,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/20/hexo-deploy-vultr/"/>
 
 
 
 
 
-  <title>归档 | June的博客</title>
+  <title>Hexo搭建到VPS | June的博客</title>
   
 
 
@@ -143,7 +144,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -237,111 +238,170 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 2 篇日志。 继续努力。
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2017">2017</h1>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/20/hexo-deploy-vultr/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="June">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/june.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="June的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2017/11/20/hexo-deploy-vultr/" itemprop="url">
-              
-                <span itemprop="name">Hexo搭建到VPS</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Hexo搭建到VPS</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-11-20T12:01:57+08:00"
-              content="2017-11-20" >
-          11-20
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-20T12:01:57+08:00">
+                2017-11-20
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/coding/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>阅读次数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/11/16/first-vue/" itemprop="url">
-              
-                <span itemprop="name">初识Vue</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-11-16T10:58:53+08:00"
-              content="2017-11-16" >
-          11-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
+      
+        <p>我原以为部署Hexo的静态页面很简单，上传到服务器的某个路径，用代理服务器关联路径到某个端口，就可以访问了！这样做是ok的，但是很不Hexo。<br>Hexo封装了上传动作，在_config.yml文件中配置上目标服务器，一个hexo deploy指令就将编译后的页面直接部署到服务器上了，省去了远程登录服务器、上传文件这些操作。</p>
+<h2 id="本地搭建Hexo"><a href="#本地搭建Hexo" class="headerlink" title="本地搭建Hexo"></a>本地搭建Hexo</h2><p><a href="https://hexo.io/" target="_blank" rel="external">https://hexo.io/</a></p>
+<h2 id="部署到服务器"><a href="#部署到服务器" class="headerlink" title="部署到服务器"></a>部署到服务器</h2><h2 id="自动部署"><a href="#自动部署" class="headerlink" title="自动部署"></a>自动部署</h2><p>##</p>
+
+      
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/16/first-vue/" rel="next" title="初识Vue">
+                <i class="fa fa-chevron-left"></i> 初识Vue
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -349,6 +409,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -369,8 +433,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -435,6 +508,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本地搭建Hexo"><span class="nav-number">1.</span> <span class="nav-text">本地搭建Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署到服务器"><span class="nav-number">2.</span> <span class="nav-text">部署到服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自动部署"><span class="nav-number">3.</span> <span class="nav-text">自动部署</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -582,6 +671,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
