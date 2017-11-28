@@ -283,7 +283,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-28T15:10:15+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-28T15:17:31+08:00">
                 2017-11-28
               </time>
             
@@ -346,13 +346,10 @@
         
           
             <h2 id="官网下载"><a href="#官网下载" class="headerlink" title="官网下载"></a>官网下载</h2><p><a href="https://www.mysql.com/cn/downloads/" target="_blank" rel="external">https://www.mysql.com/cn/downloads/</a></p>
-<h2 id="找不到初始密码，重置吧"><a href="#找不到初始密码，重置吧" class="headerlink" title="找不到初始密码，重置吧"></a>找不到初始密码，重置吧</h2><p>首先要在”设置-&gt;mysql”中关闭mqsql服务<br><code>进入终端输入：cd /usr/local/mysql/bin/
-回车后 登录管理员权限 sudo su
-回车后输入以下命令来禁止mysql验证功能 ./mysqld_safe --skip-grant-tables &amp;
-回车后mysql会自动重启（偏好设置中mysql的状态会变成running</code><br><code>输入命令 ./mysql
-回车后，输入命令 FLUSH PRIVILEGES;
-回车后，输入命令 SET PASSWORD FOR &#39;root&#39;@&#39;localhost&#39; = PASSWORD(&#39;你的新密码&#39;);</code></p>
-<h2 id="配置系统环境变量"><a href="#配置系统环境变量" class="headerlink" title="配置系统环境变量"></a>配置系统环境变量</h2><p><code>vim ~/.bash_profile</code><br>在文件中插入PATH=$PATH:/usr/local/mysql/bin<br>若无此文件，新建即可<br><code>source ~/.bash_profile</code></p>
+<h2 id="找不到初始密码，重置吧"><a href="#找不到初始密码，重置吧" class="headerlink" title="找不到初始密码，重置吧"></a>找不到初始密码，重置吧</h2><p>首先要在”设置-&gt;mysql”中关闭mqsql服务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">进入终端输入：cd /usr/local/mysql/bin/</span><br><span class="line">回车后 登录管理员权限 sudo su</span><br><span class="line">回车后输入以下命令来禁止mysql验证功能 ./mysqld_safe --skip-grant-tables &amp;</span><br><span class="line">回车后mysql会自动重启（偏好设置中mysql的状态会变成running</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入命令 ./mysql</span><br><span class="line">回车后，输入命令 FLUSH PRIVILEGES;</span><br><span class="line">回车后，输入命令 SET PASSWORD FOR &apos;root&apos;@&apos;localhost&apos; = PASSWORD(&apos;你的新密码&apos;);</span><br></pre></td></tr></table></figure>
+<h2 id="配置系统环境变量"><a href="#配置系统环境变量" class="headerlink" title="配置系统环境变量"></a>配置系统环境变量</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bash_profile</span><br></pre></td></tr></table></figure>
+<p>在文件中插入PATH=$PATH:/usr/local/mysql/bin<br>若无此文件，新建即可<br><code>source ~/.bash_profile</code></p>
 
           
         
@@ -401,7 +398,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/20/hexo-deploy-vultr/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/28/hexo-deploy-vultr/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="June">
@@ -420,7 +417,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/20/hexo-deploy-vultr/" itemprop="url">Hexo搭建到VPS</a></h1>
+                <a class="post-title-link" href="/2017/11/28/hexo-deploy-vultr/" itemprop="url">Hexo搭建到VPS</a></h1>
         
 
         <div class="post-meta">
@@ -432,8 +429,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-20T12:01:57+08:00">
-                2017-11-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-28T15:15:25+08:00">
+                2017-11-28
               </time>
             
 
@@ -496,7 +493,8 @@
           
             <p>我原以为部署Hexo的静态页面很简单，上传到服务器的某个路径，用代理服务器关联路径到某个端口，就可以访问了！这样做是ok的，但是很不Hexo。<br>Hexo封装了上传动作，在_config.yml文件中配置上目标服务器，一个hexo deploy指令就将编译后的页面直接部署到服务器上了，省去了远程登录服务器、上传文件这些操作。</p>
 <h2 id="本地搭建Hexo"><a href="#本地搭建Hexo" class="headerlink" title="本地搭建Hexo"></a>本地搭建Hexo</h2><p><a href="https://hexo.io/" target="_blank" rel="external">https://hexo.io/</a></p>
-<h2 id="部署到服务器"><a href="#部署到服务器" class="headerlink" title="部署到服务器"></a>部署到服务器</h2><h2 id="自动部署"><a href="#自动部署" class="headerlink" title="自动部署"></a>自动部署</h2><p>##</p>
+<h2 id="部署到服务器"><a href="#部署到服务器" class="headerlink" title="部署到服务器"></a>部署到服务器</h2><h2 id="自动部署"><a href="#自动部署" class="headerlink" title="自动部署"></a>自动部署</h2><p>hexo clean &amp;&amp; hexo generate –deploy</p>
+<p>##</p>
 
           
         
