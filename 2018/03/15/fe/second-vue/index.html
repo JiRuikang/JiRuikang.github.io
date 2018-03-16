@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="自定义输入组件组件通信状态管理-vuex自定义指令未完待续……">
+<meta name="description" content="自定义输入组件组件通信状态管理模式-vuex为什么在大型单页应用中，组件共用的字段变多，导致为组件通信写了很多代码，不仅容易疏漏，后期还不易维护，将各组件的共同依赖抽离出来集中管理变得十分必要。 是什么Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式，集中式的存储状态以及状态的变化规则，响应式的管理状态。 怎么办状态存储在Store对象中，第一步：安装Vuex创建该对象第二步：创建V">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue进阶">
 <meta property="og:url" content="http://yoursite.com/2018/03/15/fe/second-vue/index.html">
 <meta property="og:site_name" content="June的博客">
-<meta property="og:description" content="自定义输入组件组件通信状态管理-vuex自定义指令未完待续……">
+<meta property="og:description" content="自定义输入组件组件通信状态管理模式-vuex为什么在大型单页应用中，组件共用的字段变多，导致为组件通信写了很多代码，不仅容易疏漏，后期还不易维护，将各组件的共同依赖抽离出来集中管理变得十分必要。 是什么Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式，集中式的存储状态以及状态的变化规则，响应式的管理状态。 怎么办状态存储在Store对象中，第一步：安装Vuex创建该对象第二步：创建V">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-15T09:24:09.000Z">
+<meta property="og:updated_time" content="2018-03-16T03:56:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue进阶">
-<meta name="twitter:description" content="自定义输入组件组件通信状态管理-vuex自定义指令未完待续……">
+<meta name="twitter:description" content="自定义输入组件组件通信状态管理模式-vuex为什么在大型单页应用中，组件共用的字段变多，导致为组件通信写了很多代码，不仅容易疏漏，后期还不易维护，将各组件的共同依赖抽离出来集中管理变得十分必要。 是什么Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式，集中式的存储状态以及状态的变化规则，响应式的管理状态。 怎么办状态存储在Store对象中，第一步：安装Vuex创建该对象第二步：创建V">
 
 
 
@@ -336,7 +336,10 @@
       
 
       
-        <h2 id="自定义输入组件"><a href="#自定义输入组件" class="headerlink" title="自定义输入组件"></a>自定义输入组件</h2><h2 id="组件通信"><a href="#组件通信" class="headerlink" title="组件通信"></a>组件通信</h2><h2 id="状态管理-vuex"><a href="#状态管理-vuex" class="headerlink" title="状态管理-vuex"></a>状态管理-vuex</h2><h2 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h2><p>未完待续……</p>
+        <h2 id="自定义输入组件"><a href="#自定义输入组件" class="headerlink" title="自定义输入组件"></a>自定义输入组件</h2><h2 id="组件通信"><a href="#组件通信" class="headerlink" title="组件通信"></a>组件通信</h2><h2 id="状态管理模式-vuex"><a href="#状态管理模式-vuex" class="headerlink" title="状态管理模式-vuex"></a>状态管理模式-vuex</h2><h3 id="为什么"><a href="#为什么" class="headerlink" title="为什么"></a>为什么</h3><p>在大型单页应用中，组件共用的字段变多，导致为组件通信写了很多代码，不仅容易疏漏，后期还不易维护，将各组件的共同依赖抽离出来集中管理变得十分必要。</p>
+<h3 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h3><p>Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式，集中式的存储状态以及状态的变化规则，响应式的管理状态。</p>
+<h3 id="怎么办"><a href="#怎么办" class="headerlink" title="怎么办"></a>怎么办</h3><p>状态存储在Store对象中，第一步：安装Vuex创建该对象<br>第二步：创建Vue实例时传入store参数<br>第三步：按照项目结构要求在项目中新建store文件夹<br>第四步：new一个Vuex实例<br>第五步：在组件中通过计算属性中返回store的状态，getter是对state的封装，就像对原生状态加个插件一样<br>第六步：通过store.commit方法调用mutation中的函数更新状态，action通过返回mutation对象，异步的变更状态，通常分发action之后再调用。<br>具体参照vuex官网:<a href="https://vuex.vuejs.org/zh-cn/intro.html" target="_blank" rel="external">https://vuex.vuejs.org/zh-cn/intro.html</a></p>
+<h2 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h2><p>未完待续……</p>
 
       
     </div>
@@ -510,7 +513,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义输入组件"><span class="nav-number">1.</span> <span class="nav-text">自定义输入组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组件通信"><span class="nav-number">2.</span> <span class="nav-text">组件通信</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#状态管理-vuex"><span class="nav-number">3.</span> <span class="nav-text">状态管理-vuex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义指令"><span class="nav-number">4.</span> <span class="nav-text">自定义指令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义输入组件"><span class="nav-number">1.</span> <span class="nav-text">自定义输入组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组件通信"><span class="nav-number">2.</span> <span class="nav-text">组件通信</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#状态管理模式-vuex"><span class="nav-number">3.</span> <span class="nav-text">状态管理模式-vuex</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么"><span class="nav-number">3.1.</span> <span class="nav-text">为什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#是什么"><span class="nav-number">3.2.</span> <span class="nav-text">是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#怎么办"><span class="nav-number">3.3.</span> <span class="nav-text">怎么办</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义指令"><span class="nav-number">4.</span> <span class="nav-text">自定义指令</span></a></li></ol></div>
             
 
           </div>
