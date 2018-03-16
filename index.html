@@ -242,147 +242,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/15/tool/git指令/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="June">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/june_my.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="June的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/15/tool/git指令/" itemprop="url">git常用命令</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-15T17:58:31+08:00">
-                2018-03-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/tool/" itemprop="url" rel="index">
-                    <span itemprop="name">工具</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">版本回退：</span><br><span class="line">本地没有pull最新的代码，直接commit导致push的时候产生冲突：</span><br><span class="line">将修改代码粘贴出去执行：git reset --hard HEAD^回退到上一个版本</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/15/fe/second-vue/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -631,6 +490,147 @@
           
             <p>主要阅读npm run dev和npm run build的两条主线，首先来看npm run dev的执行主线：<br>1、    package.json<br>“scripts”: {<br>  “dev”: “rollup -w -c scripts/config.js –environment TARGET:web-full-dev”,<br>打包工具：rollup<br>npm run dev执行文件：config.js<br>知识点：<br>rollup关键配置：<br>•    entry 源代码的入口<br>•    moduleName 这个参数只有设置了umd的时候才需要设置<br>•    plugins 顾名思义，这里是来放插件的<br>•    format 设置打包的模式，比如umd，cjs等<br>•    dest 输出<br>•    banner 可以在输出文件的头部写入一段你想写的<br>•    alias 别名<br>•    env 环境变量，比如process.env等<br>rollup与其他工具的集成：<br>rollup-plugin-buble：es6转es5<br>rollup-plugin-alias：用别名缩短path<br>rollup-plugin-commonjs：commonjs转es5（应该用在其他插件转换你的模块之前 - 这是为了防止其他插件的改变破坏CommonJS的检测）<br>rollup-plugin-node-resolve：如何安装外部模块<br>rollup-plugin-replace：可以将动态设置的变量提取出来，在配置文件中设置<br>2、    scripts/config.js<br>if (process.env.TARGET) {<br>  module.exports = genConfig(process.env.TARGET)<br>} else {<br>  exports.getBuild = genConfig<br>  exports.getAllBuilds = () =&gt; Object.keys(builds).map(genConfig)<br>}<br>npm run dev*执行函数：genConfig(…)<br>“dev”: “rollup -w -c scripts/config.js –environment TARGET:web-full-dev”,<br>等同于执行rollup –w –config (config变量)将entry-runtime-with-compiler.js打包。<br>知识点：<br>module.exports与exports.XXXX：<br>知乎来讲：require方只能看到module.exports对象，我们在编写模块时用到的exports对象实际上是对module.exports对象的引用。<br>Node.js实战来讲：典型的模块是一个包含exports对象属性定义的文件，用module.exports微调模块的创建，module.exports可以对外提供单个的函数或变量，不必局限于一个对象。一个文件中既有module.exports又有exports时，exports被忽略。<br>Object.assign(target, source1,…):<br>Object.assign方法用来将源对象（source）的所有可枚举属性，复制到目标对象（target）。它至少需要两个对象作为参数，第一个参数是目标对象，后面的参数都是源对象。只要有一个参数不是对象，就会抛出TypeError错误。<br>Object.defineProperty(obj,prop,descriptor):<br>直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。默认情况下，使用Object.defineProperty()添加的属性值是不可变的。<br>3、    src/platforms/web/entry-runtime-with-compiler.js<br>知识点：<br>expr1 &amp;&amp; expr2:<br>如果expr1 能转换成false则返回expr1，否则返回expr2。<br>也就是说el=el &amp;&amp; query(el)等价于：<br>if(el){el=query(el)}<br>document.querySelector():<br>element 是一个 element 对象（DOM 元素）。<br>selectors 是一个字符串，包含一个或是多个 CSS 选择器 ，多个则以逗号分隔。<br>str.charAt():<br>返回一个新的字符串，该字符串由位于指定偏移量处的单个UTF-16代码单元组成。</p>
 
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/20/tool/git指令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="June">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/june_my.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="June的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/20/tool/git指令/" itemprop="url">git常用命令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-20T00:00:00+08:00">
+                2018-02-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/tool/" itemprop="url" rel="index">
+                    <span itemprop="name">工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">版本回退：</span><br><span class="line">本地没有pull最新的代码，直接commit导致push的时候产生冲突：</span><br><span class="line">将修改代码粘贴出去执行：git reset --hard HEAD^回退到上一个版本</span><br></pre></td></tr></table></figure>
           
         
       
@@ -1410,6 +1410,148 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/01/life/travelDq/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="June">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/june_my.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="June的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/01/life/travelDq/" itemprop="url">旅行-香格里拉</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-01T00:00:00+08:00">
+                2017-06-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/life/" itemprop="url" rel="index">
+                    <span itemprop="name">生活</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="/assets/life/travel-dq/pdc5.jpeg" alt="香格里拉"><br>看过了《冈仁波齐》，把自己的迪庆之行比作朝圣未免有辱朝圣二字，但我的确是带着一颗敬畏心而来。从丽江到迪庆有5小时的车程，我们翻山越岭而来，只盼一撇香格里拉。<br>夜幕降临的时候我们到达了迪庆县城的宾馆，放下行李，就去土司家吃藏餐了。马奶酒和青稞面吃不习惯，吃完饭看了藏族朋友们的表演，大概八点就回去休息了。<br><img src="/assets/life/travel-dq/pdc3.jpeg" alt="香格里拉"><br>第二天八点出发去石卡雪山，没有驶出县城时，可以看到路边三两行人，大都是送孩子上学的藏族女人，穿着长袖长袍、头戴艳丽头巾、腰间系着彩色围裙。开出县城后，一路上就没看到什么车和人了。大约半小时到了蓝月山谷，也就到了石卡雪山脚下，索道几乎到山顶了。《消失的地平线》中，香格里拉与外界交换东西的地方就叫蓝月山谷，这里应该是根据书里所讲后取的名字。<br><img src="/assets/life/travel-dq/sk.jpeg" alt="香格里拉"><br>大约快到中午，从石卡雪山上下来，下一站是我最期待的普达措国家森林公园。在停车场迎接我的是三两成群的藏香猪，司机扎西说，这些小猪一贯爱抢游客手里的东西。<br><img src="/assets/life/travel-dq/pdc1.jpeg" alt="香格里拉"><br>在普达措徒步一下午，秀丽的景色喂饱了眼睛，终于不枉此行。普达措和我所在的世界完全不同，我的世界声色犬马、匆匆忙忙，在这里时间是悠长的、甚至静止的。<br><img src="/assets/life/travel-dq/pdc6.jpeg" alt="香格里拉"><br><img src="/assets/life/travel-dq/pdc2.jpeg" alt="香格里拉"><br>因为普达措和蓝月山谷遗失绝尘的美，把迪庆称作香格里拉，我心里是认同的。<br>德钦太远，没有去到飞来寺，没有看到梅里雪山，实属遗憾。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/01/fe/first-vue/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1606,148 +1748,6 @@
 <li>与服务端交互<br>vue-resource：<a href="https://github.com/pagekit/vue-resource" target="_blank" rel="external">https://github.com/pagekit/vue-resource</a></li>
 </ul>
 <p>未完待续……</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/01/life/travelDq/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="June">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/june_my.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="June的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/01/life/travelDq/" itemprop="url">旅行-香格里拉</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-01T00:00:00+08:00">
-                2017-06-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/life/" itemprop="url" rel="index">
-                    <span itemprop="name">生活</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="/assets/life/travel-dq/pdc5.jpeg" alt="香格里拉"><br>看过了《冈仁波齐》，把自己的迪庆之行比作朝圣未免有辱朝圣二字，但我的确是带着一颗敬畏心而来。从丽江到迪庆有5小时的车程，我们翻山越岭而来，只盼一撇香格里拉。<br>夜幕降临的时候我们到达了迪庆县城的宾馆，放下行李，就去土司家吃藏餐了。马奶酒和青稞面吃不习惯，吃完饭看了藏族朋友们的表演，大概八点就回去休息了。<br><img src="/assets/life/travel-dq/pdc3.jpeg" alt="香格里拉"><br>第二天八点出发去石卡雪山，没有驶出县城时，可以看到路边三两行人，大都是送孩子上学的藏族女人，穿着长袖长袍、头戴艳丽头巾、腰间系着彩色围裙。开出县城后，一路上就没看到什么车和人了。大约半小时到了蓝月山谷，也就到了石卡雪山脚下，索道几乎到山顶了。《消失的地平线》中，香格里拉与外界交换东西的地方就叫蓝月山谷，这里应该是根据书里所讲后取的名字。<br><img src="/assets/life/travel-dq/sk.jpeg" alt="香格里拉"><br>大约快到中午，从石卡雪山上下来，下一站是我最期待的普达措国家森林公园。在停车场迎接我的是三两成群的藏香猪，司机扎西说，这些小猪一贯爱抢游客手里的东西。<br><img src="/assets/life/travel-dq/pdc1.jpeg" alt="香格里拉"><br>在普达措徒步一下午，秀丽的景色喂饱了眼睛，终于不枉此行。普达措和我所在的世界完全不同，我的世界声色犬马、匆匆忙忙，在这里时间是悠长的、甚至静止的。<br><img src="/assets/life/travel-dq/pdc6.jpeg" alt="香格里拉"><br><img src="/assets/life/travel-dq/pdc2.jpeg" alt="香格里拉"><br>因为普达措和蓝月山谷遗失绝尘的美，把迪庆称作香格里拉，我心里是认同的。<br>德钦太远，没有去到飞来寺，没有看到梅里雪山，实属遗憾。</p>
 
           
         
