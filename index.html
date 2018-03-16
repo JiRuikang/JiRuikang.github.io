@@ -476,7 +476,7 @@
       
         
           
-            <h2 id="自定义输入组件"><a href="#自定义输入组件" class="headerlink" title="自定义输入组件"></a>自定义输入组件</h2><h2 id="组件通信"><a href="#组件通信" class="headerlink" title="组件通信"></a>组件通信</h2><h2 id="状态管理模式-vuex"><a href="#状态管理模式-vuex" class="headerlink" title="状态管理模式-vuex"></a>状态管理模式-vuex</h2><h3 id="为什么"><a href="#为什么" class="headerlink" title="为什么"></a>为什么</h3><p>在大型单页应用中，组件共用的字段变多，导致为组件通信写了很多代码，不仅容易疏漏，后期还不易维护，将各组件的共同依赖抽离出来集中的管理变得十分必要。</p>
+            <h2 id="状态管理模式-vuex"><a href="#状态管理模式-vuex" class="headerlink" title="状态管理模式-vuex"></a>状态管理模式-vuex</h2><h3 id="为什么"><a href="#为什么" class="headerlink" title="为什么"></a>为什么</h3><p>在大型单页应用中，组件共用的字段变多，导致为组件通信写了很多代码，不仅容易疏漏，后期还不易维护，将各组件的共同依赖抽离出来集中的管理变得十分必要。</p>
 <h3 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h3><p>Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式，集中式的存储状态以及状态的变化规则，响应式的管理状态。</p>
 <h3 id="怎么办"><a href="#怎么办" class="headerlink" title="怎么办"></a>怎么办</h3><p>状态集中存储在Store对象中</p>
 <h4 id="第一步：安装Vuex"><a href="#第一步：安装Vuex" class="headerlink" title="第一步：安装Vuex"></a>第一步：安装Vuex</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vuex --save</span><br></pre></td></tr></table></figure>
@@ -487,7 +487,7 @@
 <h4 id="第四步：在组件中通过计算属性返回store的状态"><a href="#第四步：在组件中通过计算属性返回store的状态" class="headerlink" title="第四步：在组件中通过计算属性返回store的状态"></a>第四步：在组件中通过计算属性返回store的状态</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  count () &#123;</span><br><span class="line">    return this.$store.state.permissions</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 <p>getter是对state的封装，就像对原生状态加个插件一样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">        userPermissions () &#123;</span><br><span class="line">          return this.$store.getters.permissions</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br></pre></td></tr></table></figure></p>
 <h4 id="第五步：状态管理"><a href="#第五步：状态管理" class="headerlink" title="第五步：状态管理"></a>第五步：状态管理</h4><p>触发mutation或者action中的方法均可以管理状态<br>可以在组件中使用 this.$store.commit(‘xxx’) 提交 mutation，或者使用 mapMutations 辅助函数将组件中的 methods 映射为 store.commit 调用（需要在根节点注入 store）<br>Mutation 必须是同步函数，包含异步（如请求api）操作时用action，action通过返回mutation对象异步的变更状态，如何分发action、如何使用组合action在官网查看详情。<br>触发状态管理的方法较多，请参照vuex官网:<a href="https://vuex.vuejs.org/zh-cn/intro.html" target="_blank" rel="external">https://vuex.vuejs.org/zh-cn/intro.html</a></p>
-<h2 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h2><p>未完待续……</p>
+<h2 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h2><h2 id="自定义输入组件"><a href="#自定义输入组件" class="headerlink" title="自定义输入组件"></a>自定义输入组件</h2><p>未完待续……</p>
 
           
         
