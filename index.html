@@ -346,7 +346,12 @@
 <h4 id="第四步：在组件中通过计算属性返回store的状态"><a href="#第四步：在组件中通过计算属性返回store的状态" class="headerlink" title="第四步：在组件中通过计算属性返回store的状态"></a>第四步：在组件中通过计算属性返回store的状态</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  count () &#123;</span><br><span class="line">    return this.$store.state.permissions</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 <p>getter是对state的封装，就像对原生状态加个插件一样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">        userPermissions () &#123;</span><br><span class="line">          return this.$store.getters.permissions</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br></pre></td></tr></table></figure></p>
 <h4 id="第五步：状态管理"><a href="#第五步：状态管理" class="headerlink" title="第五步：状态管理"></a>第五步：状态管理</h4><p>触发mutation或者action中的方法均可以管理状态<br>可以在组件中使用 this.$store.commit(‘xxx’) 提交 mutation，或者使用 mapMutations 辅助函数将组件中的 methods 映射为 store.commit 调用（需要在根节点注入 store）<br>Mutation 必须是同步函数，包含异步（如请求api）操作时用action，action通过返回mutation对象异步的变更状态，如何分发action、如何使用组合action在官网查看详情。<br>触发状态管理的方法较多，请参照vuex官网:<a href="https://vuex.vuejs.org/zh-cn/intro.html" target="_blank" rel="external">https://vuex.vuejs.org/zh-cn/intro.html</a></p>
-<h2 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h2><h2 id="自定义输入组件"><a href="#自定义输入组件" class="headerlink" title="自定义输入组件"></a>自定义输入组件</h2><p>未完待续……</p>
+<h2 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h2><h3 id="为什么-1"><a href="#为什么-1" class="headerlink" title="为什么"></a>为什么</h3><p>在Vue的模式下，借助双向数据绑定和内置指令，我们几乎可以完全着眼于数据的变化，而不用关注DOM本身。很少的情况下，需要操作DOM，当同一种情况反复出现时，自定义一个指令，像使用内置指令一样，声明式的操作DOM更高效些。</p>
+<h3 id="是什么-1"><a href="#是什么-1" class="headerlink" title="是什么"></a>是什么</h3><p>是程序员注册的指令，同内置指令一样，将数据的变化映射为DOM的行为。</p>
+<h3 id="怎么办-1"><a href="#怎么办-1" class="headerlink" title="怎么办"></a>怎么办</h3><p>第一，通过directive注册在全局或局部<br>第二，通过钩子函数定义指令行为，钩子函数的参数均包含指令绑定的DOM元素、虚拟DOM元素、binding对象（指令命名、值、入参等）<br>步骤详解：<a href="https://cn.vuejs.org/v2/guide/custom-directive.html#ad" target="_blank" rel="external">https://cn.vuejs.org/v2/guide/custom-directive.html#ad</a></p>
+<h2 id="自定义组件的-v-model"><a href="#自定义组件的-v-model" class="headerlink" title="自定义组件的 v-model"></a>自定义组件的 v-model</h2><h3 id="为什么-2"><a href="#为什么-2" class="headerlink" title="为什么"></a>为什么</h3><p>表单输入组件默认触发事件为input，有时候需要checked、change、focus等事件触发组件的行为，这时就需要显示的定义触发事件类型</p>
+<h3 id="怎么办-2"><a href="#怎么办-2" class="headerlink" title="怎么办"></a>怎么办</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;my-checkbox&apos;, &#123;</span><br><span class="line">  model: &#123;</span><br><span class="line">    prop: &apos;checked&apos;,</span><br><span class="line">    event: &apos;change&apos;</span><br><span class="line">  &#125;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    checked: Boolean,</span><br><span class="line">    // 这样就允许拿 `value` 这个 prop 做其它事了</span><br><span class="line">    value: String</span><br><span class="line">  &#125;,</span><br><span class="line">  // ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>步骤详解：<a href="https://cn.vuejs.org/v2/guide/components.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E7%9A%84-v-model" target="_blank" rel="external">https://cn.vuejs.org/v2/guide/components.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E7%9A%84-v-model</a></p>
 
           
         
@@ -1410,148 +1415,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/01/life/travelDq/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="June">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/june_my.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="June的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/01/life/travelDq/" itemprop="url">旅行-香格里拉</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-01T00:00:00+08:00">
-                2017-06-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/life/" itemprop="url" rel="index">
-                    <span itemprop="name">生活</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="/assets/life/travel-dq/pdc5.jpeg" alt="香格里拉"><br>看过了《冈仁波齐》，把自己的迪庆之行比作朝圣未免有辱朝圣二字，但我的确是带着一颗敬畏心而来。从丽江到迪庆有5小时的车程，我们翻山越岭而来，只盼一撇香格里拉。<br>夜幕降临的时候我们到达了迪庆县城的宾馆，放下行李，就去土司家吃藏餐了。马奶酒和青稞面吃不习惯，吃完饭看了藏族朋友们的表演，大概八点就回去休息了。<br><img src="/assets/life/travel-dq/pdc3.jpeg" alt="香格里拉"><br>第二天八点出发去石卡雪山，没有驶出县城时，可以看到路边三两行人，大都是送孩子上学的藏族女人，穿着长袖长袍、头戴艳丽头巾、腰间系着彩色围裙。开出县城后，一路上就没看到什么车和人了。大约半小时到了蓝月山谷，也就到了石卡雪山脚下，索道几乎到山顶了。《消失的地平线》中，香格里拉与外界交换东西的地方就叫蓝月山谷，这里应该是根据书里所讲后取的名字。<br><img src="/assets/life/travel-dq/sk.jpeg" alt="香格里拉"><br>大约快到中午，从石卡雪山上下来，下一站是我最期待的普达措国家森林公园。在停车场迎接我的是三两成群的藏香猪，司机扎西说，这些小猪一贯爱抢游客手里的东西。<br><img src="/assets/life/travel-dq/pdc1.jpeg" alt="香格里拉"><br>在普达措徒步一下午，秀丽的景色喂饱了眼睛，终于不枉此行。普达措和我所在的世界完全不同，我的世界声色犬马、匆匆忙忙，在这里时间是悠长的、甚至静止的。<br><img src="/assets/life/travel-dq/pdc6.jpeg" alt="香格里拉"><br><img src="/assets/life/travel-dq/pdc2.jpeg" alt="香格里拉"><br>因为普达措和蓝月山谷遗失绝尘的美，把迪庆称作香格里拉，我心里是认同的。<br>德钦太远，没有去到飞来寺，没有看到梅里雪山，实属遗憾。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/01/fe/first-vue/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1748,6 +1611,148 @@
 <li>与服务端交互<br>vue-resource：<a href="https://github.com/pagekit/vue-resource" target="_blank" rel="external">https://github.com/pagekit/vue-resource</a></li>
 </ul>
 <p>未完待续……</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/01/life/travelDq/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="June">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/june_my.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="June的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/01/life/travelDq/" itemprop="url">旅行-香格里拉</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-01T00:00:00+08:00">
+                2017-06-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/life/" itemprop="url" rel="index">
+                    <span itemprop="name">生活</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="/assets/life/travel-dq/pdc5.jpeg" alt="香格里拉"><br>看过了《冈仁波齐》，把自己的迪庆之行比作朝圣未免有辱朝圣二字，但我的确是带着一颗敬畏心而来。从丽江到迪庆有5小时的车程，我们翻山越岭而来，只盼一撇香格里拉。<br>夜幕降临的时候我们到达了迪庆县城的宾馆，放下行李，就去土司家吃藏餐了。马奶酒和青稞面吃不习惯，吃完饭看了藏族朋友们的表演，大概八点就回去休息了。<br><img src="/assets/life/travel-dq/pdc3.jpeg" alt="香格里拉"><br>第二天八点出发去石卡雪山，没有驶出县城时，可以看到路边三两行人，大都是送孩子上学的藏族女人，穿着长袖长袍、头戴艳丽头巾、腰间系着彩色围裙。开出县城后，一路上就没看到什么车和人了。大约半小时到了蓝月山谷，也就到了石卡雪山脚下，索道几乎到山顶了。《消失的地平线》中，香格里拉与外界交换东西的地方就叫蓝月山谷，这里应该是根据书里所讲后取的名字。<br><img src="/assets/life/travel-dq/sk.jpeg" alt="香格里拉"><br>大约快到中午，从石卡雪山上下来，下一站是我最期待的普达措国家森林公园。在停车场迎接我的是三两成群的藏香猪，司机扎西说，这些小猪一贯爱抢游客手里的东西。<br><img src="/assets/life/travel-dq/pdc1.jpeg" alt="香格里拉"><br>在普达措徒步一下午，秀丽的景色喂饱了眼睛，终于不枉此行。普达措和我所在的世界完全不同，我的世界声色犬马、匆匆忙忙，在这里时间是悠长的、甚至静止的。<br><img src="/assets/life/travel-dq/pdc6.jpeg" alt="香格里拉"><br><img src="/assets/life/travel-dq/pdc2.jpeg" alt="香格里拉"><br>因为普达措和蓝月山谷遗失绝尘的美，把迪庆称作香格里拉，我心里是认同的。<br>德钦太远，没有去到飞来寺，没有看到梅里雪山，实属遗憾。</p>
 
           
         
