@@ -242,6 +242,155 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/04/fe/express-middleware/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="June">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/june_my.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="June的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/04/fe/express-middleware/" itemprop="url">Node-Express</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-04T00:00:00+08:00">
+                2018-04-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/fe/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Express是基于Node.js的Web开发框架。<br>官网：<a href="http://www.expressjs.com.cn" target="_blank" rel="external">http://www.expressjs.com.cn</a><br>优点：线性逻辑，通过中间件形式把业务逻辑细分、简化，一个请求进来经过一系列中间件处理后再响应给用户，清晰明了。<br>缺点：基于 callback 组合业务逻辑，业务逻辑复杂时嵌套过多，异常捕获困难。</p>
+<h2 id="常见第三方中间件："><a href="#常见第三方中间件：" class="headerlink" title="常见第三方中间件："></a>常见第三方中间件：</h2><h3 id="body-parser"><a href="#body-parser" class="headerlink" title="body-parser"></a>body-parser</h3><p>是HTTP请求体解析中间件，解析成功后覆盖原来的req.body，如果解析失败则为{}。官网：<a href="https://github.com/expressjs/body-parser" target="_blank" rel="external">https://github.com/expressjs/body-parser</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 解析自定义的 JSON</span><br><span class="line">app.use(bodyParser.json(&#123; type: &apos;application/*+json&apos; &#125;))</span><br><span class="line"></span><br><span class="line">// 解析自定义的 Buffer</span><br><span class="line">app.use(bodyParser.raw(&#123; type: &apos;application/vnd.custom-type&apos; &#125;))</span><br></pre></td></tr></table></figure></p>
+<h3 id="multer"><a href="#multer" class="headerlink" title="multer"></a>multer</h3><p>是处理multipart/form-data类型表单数据的中间件，它主要用于上传文件。官网：<a href="https://github.com/expressjs/multer" target="_blank" rel="external">https://github.com/expressjs/multer</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&apos;express&apos;)</span><br><span class="line">var app = express()</span><br><span class="line">var multer  = require(&apos;multer&apos;)</span><br><span class="line">var upload = multer()</span><br><span class="line"></span><br><span class="line">app.post(&apos;/profile&apos;, upload.array(), function (req, res, next) &#123;</span><br><span class="line">  // req.body 包含文本域</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="cookie-parser"><a href="#cookie-parser" class="headerlink" title="cookie-parser"></a>cookie-parser</h3><p>是解析cookie的中间件，cookie存储在客户端，是不可信任的，经常配合session使用。官网：<a href="https://github.com/expressjs/cookie-parser" target="_blank" rel="external">https://github.com/expressjs/cookie-parser</a></p>
+<h3 id="express-session"><a href="#express-session" class="headerlink" title="express-session"></a>express-session</h3><p>解析session的中间件，它的基本原理是服务端为每一个session维护一份会话信息数据，而客户端和服务端依靠一个全局唯一的标识来访问会话信息数据。用户访问web应用时，服务端程序决定何时创建session。官网：<a href="https://github.com/expressjs/session。关于session和cookie的好文：http://www.cnblogs.com/zhuzhenwei918/p/6778490.html" target="_blank" rel="external">https://github.com/expressjs/session。关于session和cookie的好文：http://www.cnblogs.com/zhuzhenwei918/p/6778490.html</a></p>
+<h3 id="express-static"><a href="#express-static" class="headerlink" title="express-static"></a>express-static</h3><p>将包含静态资源的目录的名称传递给 express.static 中间件函数，以便开始直接提供这些文件.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">app.use(express.static(&apos;public&apos;));</span><br><span class="line">// 可以访问位于 public 目录中的文件：http://localhost:3000/images/kitten.jpg</span><br><span class="line">app.use(&apos;/static&apos;, express.static(&apos;public&apos;));</span><br><span class="line">// 可以访问具有 /static 路径前缀的 public 目录中的文件:http://localhost:3000/static/images/kitten.jpg</span><br></pre></td></tr></table></figure></p>
+<h3 id="consolidate"><a href="#consolidate" class="headerlink" title="consolidate"></a>consolidate</h3><p>各种模板引擎的结合体<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">const server = require(&apos;express&apos;)();</span><br><span class="line">const consolidate = require(&apos;consolidate&apos;);</span><br><span class="line"></span><br><span class="line">// 设置把模板以html形式输出</span><br><span class="line">server.set(&apos;view engine&apos;,&apos;html&apos;);</span><br><span class="line">// 模板位置</span><br><span class="line">server.set(&apos;views&apos;,&apos;./views&apos;);</span><br><span class="line">// 使用ejs引擎去解析html，这里可以设置多种多对</span><br><span class="line">server.engine(&apos;html&apos;,consolidate.ejs);</span><br><span class="line"></span><br><span class="line">server.get(&apos;/index&apos;,function(req,res)&#123;</span><br><span class="line">    res.render(&apos;index.html&apos;,&#123;username:&apos;eric&apos;&#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">server.listen(1337);</span><br></pre></td></tr></table></figure></p>
+<h2 id="使用范例"><a href="#使用范例" class="headerlink" title="使用范例"></a>使用范例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">const express=require(&apos;express&apos;);</span><br><span class="line">const static=require(&apos;express-static&apos;);</span><br><span class="line">const cookieParser=require(&apos;cookie-parser&apos;);</span><br><span class="line">const cookieSession=require(&apos;cookie-session&apos;);</span><br><span class="line">const bodyParser=require(&apos;body-parser&apos;);</span><br><span class="line">const multer=require(&apos;multer&apos;);</span><br><span class="line">const consolidate=require(&apos;consolidate&apos;);</span><br><span class="line">const mysql=require(&apos;mysql&apos;);</span><br><span class="line"></span><br><span class="line">//连接池</span><br><span class="line">const db=mysql.createPool(&#123;host: &apos;localhost&apos;, user: &apos;root&apos;, password: &apos;123456&apos;, database: &apos;blog&apos;&#125;);</span><br><span class="line"></span><br><span class="line">var server=express();</span><br><span class="line">server.listen(8080);</span><br><span class="line"></span><br><span class="line">//1.解析cookie</span><br><span class="line">server.use(cookieParser(&apos;sdfasl43kjoifguokn4lkhoifo4k3&apos;));</span><br><span class="line"></span><br><span class="line">//2.使用session</span><br><span class="line">var arr=[];</span><br><span class="line">for(var i=0;i&lt;100000;i++)&#123;</span><br><span class="line">  arr.push(&apos;keys_&apos;+Math.random());</span><br><span class="line">&#125;</span><br><span class="line">server.use(cookieSession(&#123;name: &apos;zns_sess_id&apos;, keys: arr, maxAge: 20*3600*1000&#125;));</span><br><span class="line"></span><br><span class="line">//3.post数据</span><br><span class="line">server.use(bodyParser.urlencoded(&#123;extended: false&#125;));</span><br><span class="line">server.use(multer(&#123;dest: &apos;./www/upload&apos;&#125;).any());</span><br><span class="line"></span><br><span class="line">//4.配置模板引擎</span><br><span class="line">//输出什么东西</span><br><span class="line">server.set(&apos;view engine&apos;, &apos;html&apos;);</span><br><span class="line">//模板文件放在哪儿</span><br><span class="line">server.set(&apos;views&apos;, &apos;./template&apos;);</span><br><span class="line">//哪种模板引擎</span><br><span class="line">server.engine(&apos;html&apos;, consolidate.ejs);</span><br><span class="line"></span><br><span class="line">//接收用户请求</span><br><span class="line">server.get(&apos;/&apos;, (req, res, next)=&gt;&#123;</span><br><span class="line">  //查询banner的东西</span><br><span class="line">  db.query(&quot;SELECT * FROM banner_table&quot;, (err, data)=&gt;&#123;</span><br><span class="line">    if(err)&#123;</span><br><span class="line">      res.status(500).send(&apos;database error&apos;).end();</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">      res.banners=data;</span><br><span class="line"></span><br><span class="line">      next();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line">server.get(&apos;/&apos;, (req, res, next)=&gt;&#123;</span><br><span class="line">  //查询文章列表</span><br><span class="line">  db.query(&apos;SELECT ID,title,summery FROM article_table&apos;, (err, data)=&gt;&#123;</span><br><span class="line">    if(err)&#123;</span><br><span class="line">      res.status(500).send(&apos;database error&apos;).end();</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">      res.articles=data;</span><br><span class="line"></span><br><span class="line">      next();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line">server.get(&apos;/&apos;, (req, res)=&gt;&#123;</span><br><span class="line">  res.render(&apos;index.ejs&apos;, &#123;banners: res.banners, articles: res.articles&#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">server.get(&apos;/article&apos;, (req, res)=&gt;&#123;</span><br><span class="line">  res.render(&apos;conText.ejs&apos;, &#123;&#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//4.static数据</span><br><span class="line">server.use(static(&apos;./www&apos;));</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/22/fe/source-vue2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1368,7 +1517,7 @@
       
         
           
-            <h2 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h2><p>和Java类似的写服务端程序的语言<br>既用来写服务器端应用程序，又用来写服务器本身，换句话说，它的运行不需要任何容器，它本身就提供了实现容器的方法。<br>构建在JavaScript之上，会紧跟ES标准，也就是说可以使用JavaScript最新的特性。</p>
+            <h2 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h2><p>和Java类似的写服务端程序的语言<br>既用来写服务器端应用程序，又用来写服务器本身，换句话说，它的运行不需要任何容器，它本身就提供了实现容器的方法。<br>构建在JavaScript之上，会紧跟ES标准，也就是说可以使用JavaScript最新的特性。<br>node官方文档：<a href="http://nodejs.cn/api" target="_blank" rel="external">http://nodejs.cn/api</a></p>
 <h2 id="为什么"><a href="#为什么" class="headerlink" title="为什么"></a>为什么</h2><p>为了在不增加学习成本的情况下，实现前端程序员的全栈梦<br>为实现轻量级的、分布式的、实时数据服务一类的应用提供简便的方法</p>
 <h2 id="怎么办"><a href="#怎么办" class="headerlink" title="怎么办"></a>怎么办</h2><h3 id="提供JavaScript的运行环境"><a href="#提供JavaScript的运行环境" class="headerlink" title="提供JavaScript的运行环境"></a>提供JavaScript的运行环境</h3><p>浏览器的引擎就是现成的运行环境，浏览器厂商白热化的竞争使得引擎的性能大幅提升，而Google Chrome的V8引擎将JavaScript直接编译成本地机器码，性能极优。<br>Node首先要提供JavaScript的运行环境，也就是JavaScript运行的虚拟机，Node的作者并没有自己写这样一个虚拟机，而是借用了Chrome的V8虚拟机。</p>
 <h3 id="如何解决I-O阻塞"><a href="#如何解决I-O阻塞" class="headerlink" title="如何解决I/O阻塞"></a>如何解决I/O阻塞</h3><p>Apache解决I/O阻塞的方法是来一个请求，开一个线程的多线程服务，与Apache不同，Node只有一个线程，代码异步执行，不会产生阻塞。<br>I/O操作在脚本执行的主顺序之外执行，当I/O操作完成后，触发一个事件，执行回调函数。<br>这种机制使得Node服务器像nginx一样高效，可以随时相应请求，不必担心服务器被I/O操作拖垮。</p>
@@ -1518,250 +1667,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入命令 ./mysql</span><br><span class="line">回车后，输入命令 FLUSH PRIVILEGES;</span><br><span class="line">回车后，输入命令 SET PASSWORD FOR &apos;root&apos;@&apos;localhost&apos; = PASSWORD(&apos;你的新密码&apos;);</span><br></pre></td></tr></table></figure>
 <h2 id="配置系统环境变量"><a href="#配置系统环境变量" class="headerlink" title="配置系统环境变量"></a>配置系统环境变量</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bash_profile</span><br></pre></td></tr></table></figure>
 <p>在文件中插入PATH=$PATH:/usr/local/mysql/bin<br>若无此文件，新建即可<br><code>source ~/.bash_profile</code></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/01/fe/first-vue/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="June">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/june_my.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="June的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/01/fe/first-vue/" itemprop="url">初识Vue</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-01T00:00:00+08:00">
-                2017-06-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/fe/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>17年年初开始接触Vue，认真学习一个月后，加入了团队重构Vue的任务中。React、Angular、Vue是这两年国内最热的话题，都是要学的，之所以最先选择Vue，除了工作中的契机还源于内心对母语的依恋。所以在这里，不仅仅是初识Vue，还是初识前端框架。在此总结下Vue的关键特性，以记录学习感悟。<br>每一个特性都围绕是什么、怎么办、为什么展开，从普遍方法讲到Vue的方法。</p>
-<h2 id="特性一：MVVM-双向数据绑定"><a href="#特性一：MVVM-双向数据绑定" class="headerlink" title="特性一：MVVM-双向数据绑定"></a>特性一：MVVM-双向数据绑定</h2><h3 id="是什么？是一种MV-模式"><a href="#是什么？是一种MV-模式" class="headerlink" title="是什么？是一种MV*模式"></a>是什么？是一种MV*模式</h3><p>首先，从一个业务场景中体会一下什么是模式。</p>
-<p>有这样一个场景，有个input框，用户输入内容后，验证并提示用户输入内容是否合法。</p>
-<p>传统html+js的做法：获取input中数据——&gt;验证数据——&gt;修改页面视图</p>
-<p>mvvm框架的做法：input中数据同步更新到内存——&gt;从内存取input数据并验证——&gt;修改内存中各组件属性，根据数据变化，视图自动更新</p>
-<p><img src="/assets/first-vue/mvvm_abstract.png" alt="模式"></p>
-<ul>
-<li>M：业务逻辑相关的数据的封装载体</li>
-<li>V：界面的显示和渲染</li>
-<li>VM：View和Model的粘合体，负责View和Model的交互和协作</li>
-</ul>
-<p>如此来看MVVM模式是比没有模式多出一些操作来的，这样有什么好处吗？</p>
-<h3 id="为什么？为了避免操作DOM，为了解耦M和V"><a href="#为什么？为了避免操作DOM，为了解耦M和V" class="headerlink" title="为什么？为了避免操作DOM，为了解耦M和V"></a>为什么？为了避免操作DOM，为了解耦M和V</h3><p>首先，Vue使用MVVM模式更彻底的封装了DOM，操作数据完全代替了操作DOM。</p>
-<p>众所周知，对浏览器而言DOM操作是个麻烦，避免操作原生DOM也就避免了兼容性、复杂性等问题。</p>
-<p>节约了使用事件代理、一次性生成DOM节点、在内存中操作DOM、缓存DOM对象等手动优化DOM操作。</p>
-<p>解耦M和V的好处在于：</p>
-<ul>
-<li>低耦合：View可以独立于Model修改，同一个ViewModel可以被多个View复用；并且可以做到View和Model的变化互不影响；</li>
-<li>可重用性：可以把一些视图的逻辑放在ViewModel，让多个View复用；</li>
-<li>独立开发：开发人员可以专注与业务逻辑和数据的开发（ViewModel），界面设计人员可以专注于UI(View)的设计；</li>
-<li>可测试性：清晰的View分层，使得针对表现层业务逻辑的测试更容易，更简单。</li>
-</ul>
-<h3 id="如何实现MVVM"><a href="#如何实现MVVM" class="headerlink" title="如何实现MVVM"></a>如何实现MVVM</h3><p>实现MVVM就是实现数据绑定加视同更新，实现方法有脏检查、数据模型、数据监听等多种，在此推荐一篇文章，细讲这些方法的不同：<a href="http://www.ayqy.net/blog/双向数据绑定的3种实现方式/" target="_blank" rel="external">http://www.ayqy.net/blog/双向数据绑定的3种实现方式/</a></p>
-<p>Vue如何实现MVVM，我找到一张这样的图片：</p>
-<p><img src="/assets/first-vue/mvvm_vue.png" alt="Vue实现MVVM"></p>
-<ul>
-<li>Object.defineProperty()劫持数据，跟踪依赖。get方法：添加value到订阅者集合，set方法：监听到value变化时，通知订阅者更新视图。</li>
-<li>使用观察者模式，数据变化时通知订阅者更新视图</li>
-</ul>
-<p>上一张图很好的描述了Vue如何执行MVVM，关于Vue如何初始化MVVM我画了如下流程图：</p>
-<p><img src="/assets/first-vue/mvvm_init.png" alt="Vue初始化MVVM"></p>
-<h2 id="特性二：Virtual-DOM-虚拟DOM"><a href="#特性二：Virtual-DOM-虚拟DOM" class="headerlink" title="特性二：Virtual DOM-虚拟DOM"></a>特性二：Virtual DOM-虚拟DOM</h2><h3 id="是什么？是用JS描述DOM的一种更新DOM的算法"><a href="#是什么？是用JS描述DOM的一种更新DOM的算法" class="headerlink" title="是什么？是用JS描述DOM的一种更新DOM的算法"></a>是什么？是用JS描述DOM的一种更新DOM的算法</h3><p>html描述DOM：<br>&lt;ul id=”myId”&gt;&lt;li&gt;Item 1&lt;/li&gt;&lt;li&gt;Item 2&lt;/li&gt;&lt;ul&gt;<br>js对象描述DOM：<br>Let domNode = {<br>  tag: “ul”<br>  attributes: { id: “myId” }<br>  children: [<br>    // where the LI”s would go<br>  ]};</p>
-<h3 id="如何实现？先用虚拟DOM缓冲、再批量操作DOM"><a href="#如何实现？先用虚拟DOM缓冲、再批量操作DOM" class="headerlink" title="如何实现？先用虚拟DOM缓冲、再批量操作DOM"></a>如何实现？先用虚拟DOM缓冲、再批量操作DOM</h3><p>实现Virtual DOM的通用方法如下：</p>
-<ol>
-<li>用JS对象模拟DOM树</li>
-<li>比较两棵虚拟DOM树的差异</li>
-<li>把差异应用到真正的DOM树上</li>
-</ol>
-<ul>
-<li>如何实现Virtual DOM：<a href="https://github.com/livoras/blog/issues/13" target="_blank" rel="external">https://github.com/livoras/blog/issues/13</a></li>
-</ul>
-<p>Vue是如何实现Virtual DOM的？</p>
-<ul>
-<li>VDOM：Vue的虚拟DOM</li>
-<li>VNode：Virtual DOM采用的数据结构</li>
-<li>patch.js：新旧 VNode 对比的 diff 函数，diff 算法来源于 snabbdom，snabbdom 的算法根据 DOM 操作跨层级增删节点较少的特点进行调整，将代码复杂度降到 O(n)</li>
-</ul>
-<p>获取template——&gt;编译template为render()，render返回当前页面VNode<br>数据更新——&gt;执行render()，返回新VNode——&gt;执行patch()，新旧 VNode 对比 diff——&gt;根据diff更新DOM</p>
-<p>从Vue的模板渲染中看Virtual DOM的实现</p>
-<p><img src="/assets/first-vue/virtualDOM.png" alt="Vue实现Virtual DOM"></p>
-<h3 id="为什么要使用Virtual-DOM？为了减少回流重绘次数"><a href="#为什么要使用Virtual-DOM？为了减少回流重绘次数" class="headerlink" title="为什么要使用Virtual DOM？为了减少回流重绘次数"></a>为什么要使用Virtual DOM？为了减少回流重绘次数</h3><ul>
-<li>操作DOM代价大，单页DOM多，代价更大</li>
-<li>和Vue使用Virtual DOM的出发点一样，有一篇很好的文章Reatc为什么使用Virtual DOM：<a href="https://mblur.com/notes/2016/08/28/react-why-virtual-dom.html" target="_blank" rel="external">https://mblur.com/notes/2016/08/28/react-why-virtual-dom.html</a></li>
-<li>浏览器优化后也可批处理DOM，但对开发人员是黑盒，react将批处理的时机选择交到了我们手中，我们可以控制何时render页面。</li>
-</ul>
-<p>浏览器更新DOM的代价，可见下图：<br><img src="/assets/first-vue/virtualDOM_DOM.png" alt="操作DOM的代价"></p>
-<h2 id="特点三：构建简单"><a href="#特点三：构建简单" class="headerlink" title="特点三：构建简单"></a>特点三：构建简单</h2><h3 id="如何构建一个Vue项目"><a href="#如何构建一个Vue项目" class="headerlink" title="如何构建一个Vue项目"></a>如何构建一个Vue项目</h3><p>引入Vue.js: &lt;script src=“<a href="https://unpkg.com/vue/dist/vue.js”&gt;&lt;/script&gt;" target="_blank" rel="external">https://unpkg.com/vue/dist/vue.js”&gt;&lt;/script&gt;</a><br>更合适做法：用脚手架vue-cli<br>vue-cli涉及到的主要技术框架：</p>
-<ul>
-<li>node.js：整个脚手架工具的根本组成部分；</li>
-<li>commander：能够更好地组织和处理命令行的输入；</li>
-<li>download-git-repo：从git远程仓库下载文件；</li>
-<li>handlebars：语义模板库；</li>
-<li>metalsmith：静态页面构建，配合handlebars使用；</li>
-</ul>
-<p>安装步骤：</p>
-<ul>
-<li>安装vue-cli：npm install -g vue-cli</li>
-<li>使用webpack模板：vue init webpack my-project</li>
-<li>可以参考：<a href="http://www.jianshu.com/p/beae26e57b0f" target="_blank" rel="external">http://www.jianshu.com/p/beae26e57b0f</a></li>
-</ul>
-<h3 id="项目目录结构"><a href="#项目目录结构" class="headerlink" title="项目目录结构"></a>项目目录结构</h3><ul>
-<li>index.html：访问入口</li>
-<li>main.js：webpack部署项目的入口文件</li>
-<li>build：打包后的文件放在这里</li>
-<li>src：存放自己的文件</li>
-<li>可以参考：<a href="http://www.runoob.com/vue2/vue-directory-structure.html" target="_blank" rel="external">http://www.runoob.com/vue2/vue-directory-structure.html</a></li>
-</ul>
-<h3 id="WebPack"><a href="#WebPack" class="headerlink" title="WebPack"></a>WebPack</h3><p>WebPack可以看做是模块打包机：<br>它做的事情是，分析你的项目结构，找到JavaScript模块以及其它的一些浏览器不能直接运行的拓展语言（Scss，TypeScript等），并将其打包为合适的格式以供浏览器使用。<br>webpack配置分析：<br><a href="https://github.com/DDFE/DDFE-blog/issues/10" target="_blank" rel="external">https://github.com/DDFE/DDFE-blog/issues/10</a></p>
-<h3 id="项目运行"><a href="#项目运行" class="headerlink" title="项目运行"></a>项目运行</h3><p>加载模块：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure></p>
-<p>本地启动：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm run dev</span><br></pre></td></tr></table></figure></p>
-<p>启动一个express服务，挂到一个端口上，强制浏览器打开这个url，用express结合webpack全栈自动刷新，实现热替换。</p>
-<p>生产环境启动：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm run build</span><br></pre></td></tr></table></figure></p>
-<p>webpack将文件打包到build文件夹中，可通过ng等反向代理服务器的配置，将index.html文件的路径映射到一个url上。</p>
-<h2 id="特点四：组件化"><a href="#特点四：组件化" class="headerlink" title="特点四：组件化"></a>特点四：组件化</h2><h3 id="组件化是什么"><a href="#组件化是什么" class="headerlink" title="组件化是什么"></a>组件化是什么</h3><p><img src="/assets/first-vue/components_web1.png" alt="Vue实现Virtual DOM"></p>
-<p><img src="/assets/first-vue/components_web2.png" alt="Vue实现Virtual DOM"></p>
-<h3 id="为什么要组件化"><a href="#为什么要组件化" class="headerlink" title="为什么要组件化"></a>为什么要组件化</h3><ul>
-<li>可以用这篇解释为什么要组件化<a href="http://www.infoq.com/cn/articles/front-end-component-develop-and-application-in-react-native" target="_blank" rel="external">http://www.infoq.com/cn/articles/front-end-component-develop-and-application-in-react-native</a></li>
-<li>以架构层的组件复用降低工作量</li>
-<li>以组件的规范性保障项目设计的统一性</li>
-<li>以组件的独立性和自治性提升团队协同效率</li>
-</ul>
-<h3 id="Vue如何实现组件化"><a href="#Vue如何实现组件化" class="headerlink" title="Vue如何实现组件化"></a>Vue如何实现组件化</h3><ul>
-<li><a href="https://cn.vuejs.org/v2/guide/components.html" target="_blank" rel="external">https://cn.vuejs.org/v2/guide/components.html</a></li>
-<li>组件是自定义元素:<my-component></my-component></li>
-<li>prop 是单向绑定的：当父组件的属性变化时，将传导给子组件，但是不会反过来</li>
-</ul>
-<h2 id="核心插件"><a href="#核心插件" class="headerlink" title="核心插件"></a>核心插件</h2><p>最后分享几个Vue核心插件的地址：</p>
-<ul>
-<li>前后端分离、单页、路由<br>vue-router 2：<a href="https://router.vuejs.org/zh-cn/" target="_blank" rel="external">https://router.vuejs.org/zh-cn/</a></li>
-<li>状态管理<br>Vuex ：<a href="https://vuex.vuejs.org/zh-cn/intro.html" target="_blank" rel="external">https://vuex.vuejs.org/zh-cn/intro.html</a></li>
-<li>与服务端交互<br>vue-resource：<a href="https://github.com/pagekit/vue-resource" target="_blank" rel="external">https://github.com/pagekit/vue-resource</a></li>
-</ul>
-<p>未完待续……</p>
+<h2 id="启动、重启、停止"><a href="#启动、重启、停止" class="headerlink" title="启动、重启、停止"></a>启动、重启、停止</h2><p>启动 sudo /usr/local/MySQL/support-files/mysql.server start<br>重启 sudo /usr/local/mysql/support-files/mysql.server stop<br>停止 sudo /usr/local/mysql/support-files/mysql.server restart</p>
 
           
         
@@ -1851,7 +1757,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
