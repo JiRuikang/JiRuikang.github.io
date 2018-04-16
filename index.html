@@ -1664,10 +1664,10 @@
           
             <h2 id="官网下载"><a href="#官网下载" class="headerlink" title="官网下载"></a>官网下载</h2><p><a href="https://www.mysql.com/cn/downloads/" target="_blank" rel="external">https://www.mysql.com/cn/downloads/</a></p>
 <h2 id="找不到初始密码，重置吧"><a href="#找不到初始密码，重置吧" class="headerlink" title="找不到初始密码，重置吧"></a>找不到初始密码，重置吧</h2><p>首先要在”设置-&gt;mysql”中关闭mqsql服务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">进入终端输入：cd /usr/local/mysql/bin/</span><br><span class="line">回车后 登录管理员权限 sudo su</span><br><span class="line">回车后输入以下命令来禁止mysql验证功能 ./mysqld_safe --skip-grant-tables &amp;</span><br><span class="line">回车后mysql会自动重启（偏好设置中mysql的状态会变成running</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入命令 ./mysql</span><br><span class="line">回车后，输入命令 FLUSH PRIVILEGES;</span><br><span class="line">回车后，输入命令 SET PASSWORD FOR &apos;root&apos;@&apos;localhost&apos; = PASSWORD(&apos;你的新密码&apos;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">输入命令 ./mysql</span><br><span class="line">回车后，输入命令 FLUSH PRIVILEGES;</span><br><span class="line">回车后，输入命令 SET PASSWORD FOR &apos;root&apos;@&apos;localhost&apos; = PASSWORD(&apos;你的新密码&apos;);</span><br><span class="line">回车后，输入命令 flush privileges;</span><br><span class="line">回车后，输入命令 exit;</span><br><span class="line">重启mysql</span><br></pre></td></tr></table></figure>
 <h2 id="配置系统环境变量"><a href="#配置系统环境变量" class="headerlink" title="配置系统环境变量"></a>配置系统环境变量</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bash_profile</span><br></pre></td></tr></table></figure>
 <p>在文件中插入PATH=$PATH:/usr/local/mysql/bin<br>若无此文件，新建即可<br><code>source ~/.bash_profile</code></p>
-<h2 id="启动、重启、停止"><a href="#启动、重启、停止" class="headerlink" title="启动、重启、停止"></a>启动、重启、停止</h2><p>启动 sudo /usr/local/MySQL/support-files/mysql.server start<br>重启 sudo /usr/local/mysql/support-files/mysql.server stop<br>停止 sudo /usr/local/mysql/support-files/mysql.server restart</p>
+<h2 id="启动、重启、停止"><a href="#启动、重启、停止" class="headerlink" title="启动、重启、停止"></a>启动、重启、停止</h2><p>启动 sudo /usr/local/MySQL/support-files/mysql.server start<br>重启 sudo /usr/local/mysql/support-files/mysql.server restart<br>停止 sudo /usr/local/mysql/support-files/mysql.server stop</p>
 
           
         
@@ -1757,7 +1757,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
