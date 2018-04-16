@@ -242,6 +242,295 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/20/tool/mysql/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="June">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/june_my.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="June的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/20/tool/mysql/" itemprop="url">mac环境安装mysql</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-20T00:00:00+08:00">
+                2017-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/tool/" itemprop="url" rel="index">
+                    <span itemprop="name">工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="官网下载"><a href="#官网下载" class="headerlink" title="官网下载"></a>官网下载</h2><p><a href="https://www.mysql.com/cn/downloads/" target="_blank" rel="external">https://www.mysql.com/cn/downloads/</a></p>
+<h2 id="找不到初始密码，重置吧"><a href="#找不到初始密码，重置吧" class="headerlink" title="找不到初始密码，重置吧"></a>找不到初始密码，重置吧</h2><p>首先要在”设置-&gt;mysql”中关闭mqsql服务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">进入终端输入：cd /usr/local/mysql/bin/</span><br><span class="line">回车后 登录管理员权限 sudo su</span><br><span class="line">回车后输入以下命令来禁止mysql验证功能 ./mysqld_safe --skip-grant-tables &amp;</span><br><span class="line">回车后mysql会自动重启（偏好设置中mysql的状态会变成running</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">输入命令 ./mysql</span><br><span class="line">回车后，输入命令 FLUSH PRIVILEGES;</span><br><span class="line">回车后，输入命令 SET PASSWORD FOR &apos;root&apos;@&apos;localhost&apos; = PASSWORD(&apos;你的新密码&apos;);</span><br><span class="line">回车后，输入命令 flush privileges;</span><br><span class="line">回车后，输入命令 exit;</span><br><span class="line">重启mysql</span><br></pre></td></tr></table></figure>
+<h2 id="配置系统环境变量"><a href="#配置系统环境变量" class="headerlink" title="配置系统环境变量"></a>配置系统环境变量</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bash_profile</span><br></pre></td></tr></table></figure>
+<p>在文件中插入PATH=$PATH:/usr/local/mysql/bin<br>若无此文件，新建即可<br><code>source ~/.bash_profile</code></p>
+<h2 id="启动、重启、停止"><a href="#启动、重启、停止" class="headerlink" title="启动、重启、停止"></a>启动、重启、停止</h2><p>启动 sudo /usr/local/MySQL/support-files/mysql.server start<br>重启 sudo /usr/local/mysql/support-files/mysql.server restart<br>停止 sudo /usr/local/mysql/support-files/mysql.server stop</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/01/life/travelDq/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="June">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/june_my.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="June的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/01/life/travelDq/" itemprop="url">旅行-香格里拉</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-01T00:00:00+08:00">
+                2017-06-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/life/" itemprop="url" rel="index">
+                    <span itemprop="name">生活</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="/assets/life/travel-dq/pdc5.jpeg" alt="香格里拉"><br>看过了《冈仁波齐》，把自己的迪庆之行比作朝圣未免有辱朝圣二字，但我的确是带着一颗敬畏心而来。从丽江到迪庆有5小时的车程，我们翻山越岭而来，只盼一撇香格里拉。<br>夜幕降临的时候我们到达了迪庆县城的宾馆，放下行李，就去土司家吃藏餐了。马奶酒和青稞面吃不习惯，吃完饭看了藏族朋友们的表演，大概八点就回去休息了。<br><img src="/assets/life/travel-dq/pdc3.jpeg" alt="香格里拉"><br>第二天八点出发去石卡雪山，没有驶出县城时，可以看到路边三两行人，大都是送孩子上学的藏族女人，穿着长袖长袍、头戴艳丽头巾、腰间系着彩色围裙。开出县城后，一路上就没看到什么车和人了。大约半小时到了蓝月山谷，也就到了石卡雪山脚下，索道几乎到山顶了。《消失的地平线》中，香格里拉与外界交换东西的地方就叫蓝月山谷，这里应该是根据书里所讲后取的名字。<br><img src="/assets/life/travel-dq/sk.jpeg" alt="香格里拉"><br>大约快到中午，从石卡雪山上下来，下一站是我最期待的普达措国家森林公园。在停车场迎接我的是三两成群的藏香猪，司机扎西说，这些小猪一贯爱抢游客手里的东西。<br><img src="/assets/life/travel-dq/pdc1.jpeg" alt="香格里拉"><br>在普达措徒步一下午，秀丽的景色喂饱了眼睛，终于不枉此行。普达措和我所在的世界完全不同，我的世界声色犬马、匆匆忙忙，在这里时间是悠长的、甚至静止的。<br><img src="/assets/life/travel-dq/pdc6.jpeg" alt="香格里拉"><br><img src="/assets/life/travel-dq/pdc2.jpeg" alt="香格里拉"><br>因为普达措和蓝月山谷遗失绝尘的美，把迪庆称作香格里拉，我心里是认同的。<br>德钦太远，没有去到飞来寺，没有看到梅里雪山，实属遗憾。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/01/fe/first-vue/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -437,148 +726,6 @@
 <li>状态管理<br>Vuex ：<a href="https://vuex.vuejs.org/zh-cn/intro.html" target="_blank" rel="external">https://vuex.vuejs.org/zh-cn/intro.html</a></li>
 <li>与服务端交互<br>vue-resource：<a href="https://github.com/pagekit/vue-resource" target="_blank" rel="external">https://github.com/pagekit/vue-resource</a></li>
 </ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/01/life/travelDq/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="June">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/june_my.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="June的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/01/life/travelDq/" itemprop="url">旅行-香格里拉</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-01T00:00:00+08:00">
-                2017-06-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/life/" itemprop="url" rel="index">
-                    <span itemprop="name">生活</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="/assets/life/travel-dq/pdc5.jpeg" alt="香格里拉"><br>看过了《冈仁波齐》，把自己的迪庆之行比作朝圣未免有辱朝圣二字，但我的确是带着一颗敬畏心而来。从丽江到迪庆有5小时的车程，我们翻山越岭而来，只盼一撇香格里拉。<br>夜幕降临的时候我们到达了迪庆县城的宾馆，放下行李，就去土司家吃藏餐了。马奶酒和青稞面吃不习惯，吃完饭看了藏族朋友们的表演，大概八点就回去休息了。<br><img src="/assets/life/travel-dq/pdc3.jpeg" alt="香格里拉"><br>第二天八点出发去石卡雪山，没有驶出县城时，可以看到路边三两行人，大都是送孩子上学的藏族女人，穿着长袖长袍、头戴艳丽头巾、腰间系着彩色围裙。开出县城后，一路上就没看到什么车和人了。大约半小时到了蓝月山谷，也就到了石卡雪山脚下，索道几乎到山顶了。《消失的地平线》中，香格里拉与外界交换东西的地方就叫蓝月山谷，这里应该是根据书里所讲后取的名字。<br><img src="/assets/life/travel-dq/sk.jpeg" alt="香格里拉"><br>大约快到中午，从石卡雪山上下来，下一站是我最期待的普达措国家森林公园。在停车场迎接我的是三两成群的藏香猪，司机扎西说，这些小猪一贯爱抢游客手里的东西。<br><img src="/assets/life/travel-dq/pdc1.jpeg" alt="香格里拉"><br>在普达措徒步一下午，秀丽的景色喂饱了眼睛，终于不枉此行。普达措和我所在的世界完全不同，我的世界声色犬马、匆匆忙忙，在这里时间是悠长的、甚至静止的。<br><img src="/assets/life/travel-dq/pdc6.jpeg" alt="香格里拉"><br><img src="/assets/life/travel-dq/pdc2.jpeg" alt="香格里拉"><br>因为普达措和蓝月山谷遗失绝尘的美，把迪庆称作香格里拉，我心里是认同的。<br>德钦太远，没有去到飞来寺，没有看到梅里雪山，实属遗憾。</p>
 
           
         
@@ -1009,163 +1156,6 @@
             <p><img src="/assets/life/marry/meetlove.jpeg" alt="foreverlove"></p>
 <h2 id="再见公主"><a href="#再见公主" class="headerlink" title="再见公主"></a>再见公主</h2><p>小女孩总觉得婚礼是这个世界上最重要的事情，所有的女孩都是公主，都该嫁给一位王子，走进童话般的婚礼。<br>我八岁的小表妹问我：“你选择的是哪个王子”，我想自己也过了“大房花泽类、二房道明寺”的年纪，没什么不好开口的，我回答：“他叫xx”。<br><img src="/assets/life/marry/lifelove.jpeg" alt="foreverlove"><br>我明白，我并不是许先生的公主，起码不是一辈子的公主。小女孩唯独可以是父母的小公主，这样才不会吃了公主病的苦头。<br>我有公主般修长细腻的双手，母亲总是一边嚷嚷：“长这么大了，一点家务也不会做”，一边絮叨：“这么久才回来一次，学习工作那么累，回来了就好好休息，什么也不要做”。我的父亲干脆连母亲的这点纠结也没有，我回家啃老一直是他莫大的心愿。<br>然而我怎么忍心，小时候，母亲的双手何尝不是修长细腻，通宵达旦是父亲常有的拼搏，二十五年了，他一定累了。如果有岁月静好，想想是谁在为自己负重前行。<br>公主长大会变成女王，即便不是女王，即便清纯不再，成熟未满，要成立自己的家庭，第一件事就是对公主的身份说再见。十指不沾阳春水，今来也要做汤赓。嫁人，是放下娇贵矜持的时刻，此刻的掌声属于父母。<br><img src="/assets/life/marry/startlove.jpeg" alt="foreverlove"></p>
 <h2 id="何为爱情"><a href="#何为爱情" class="headerlink" title="何为爱情"></a>何为爱情</h2><p>拥有同一个青春，就是最好的爱情，我一直这样以为。<br>人人都想嫁给爱情吧？我们认识的晚，没关系，我们补过青春。<br><img src="/assets/life/marry/deeplove.jpeg" alt="foreverlove"><br>我们唱歌、游泳、吃烧烤，还跑到重庆跨年，在解放碑前，把自己淹没在漫山遍地的大学生里，吹凉凉的风，看热闹的人群，等零点的钟声。<br>我自然没有真的等到零点，25岁了，睡眠比热闹重要。零点之后窗外越来越吵，跨年的大学生们回来了，我被他们的活力和朝气吸引，趴在窗户边凝望他们。看着他们一群一群的走来，抬着成箱的啤酒，提着大把的烤串。<br>不知道为什么，从那一刻开始，我就不再想补过青春这件事了。<br><img src="/assets/life/marry/colorlove.jpeg" alt="foreverlove"><br>我跟许先生工作之后相识，但我们的确同一所高中，同一届实验班，同样的高考分数，想到这里，又觉得我们还算有些革命情谊。<br>没有最好的爱情，只有相伴走过的岁月，人生那么长，世界那么大，错过一些又怎样。<br><img src="/assets/life/marry/foreverlove.jpeg" alt="foreverlove"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/16/life/travelJp/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="June">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/june_my.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="June的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/04/16/life/travelJp/" itemprop="url">预备攻略-东京、京都、奈良、大阪</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-16T00:00:00+08:00">
-                2017-04-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/life/" itemprop="url" rel="index">
-                    <span itemprop="name">生活</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><p>日本的地方行政区划制度，随明治政府于1871年实施的废藩置县政策而建立，一般分为都、道、府、县（广域地方公共团体）以及市、町、村（基础地方公共团体）两级。<br>现今日本全国分为47个一级行政区：一都（东京都）、一道（北海道）、二府（大阪府、京都府）、四十三县，其下再设立市、町、村。<br><img src="/assets/life/travel-jp/全国地图.jpg" alt="地图"><br>拟计划从本文中筛选50%进行观光。</p>
-<h2 id="京都"><a href="#京都" class="headerlink" title="京都"></a>京都</h2><p><img src="/assets/life/travel-jp/京都.png" alt="地图"></p>
-<h3 id="西芳寺"><a href="#西芳寺" class="headerlink" title="西芳寺"></a>西芳寺</h3><p>开创于奈良時代，为世界文化遗产，是日本最古老的庭园之一。庭园铺满青苔，共有120余重，又名“苔寺”。心形黄金池前面有池泉回廊。湘南亭是幕府末期岩仓具视隐居的地方。参拜前需要办理申请手续，供奉3000日元。建议游客在苔藓最为美丽的梅雨时节来访。另外，在红叶的时节，在绿色的地毯上撒满红色和黄色的落叶，又将是另一种美。寄明信片前去预约需要预留一定的回信时间，建议提前1-2个月预约。<br>门票：3000日元</p>
-<h3 id="瑠璃光院"><a href="#瑠璃光院" class="headerlink" title="瑠璃光院"></a>瑠璃光院</h3><p>是历代皇族、住持经常访问的地方。日式屋廊与五彩枫叶完美结合，层林尽染斑斓意，说是日本最美的赏枫之处也不为过。别处的红叶只有红黄两色，这里却有粉色，登上楼台三色交映，看得人如在幻境之中。开放时间有限制，待查明。<br>门票：2000日元</p>
-<h3 id="岚山-amp-嵯峨野观光小火车（寺庙-自然风光）"><a href="#岚山-amp-嵯峨野观光小火车（寺庙-自然风光）" class="headerlink" title="岚山&amp;嵯峨野观光小火车（寺庙 自然风光）"></a>岚山&amp;嵯峨野观光小火车（寺庙 自然风光）</h3><p>岚山是京都市西郊的一处自然观光胜地，包括渡月桥两岸周边及嵯峨野地区。这里春季的樱花和秋天的红枫非常有名，而风光秀美的嵯峨野竹林也流露着京都独特的韵味。岚山一带散布着许多知名的寺院、神社。游玩路线岚山一带可观光的景点较多，范围也比较大，需要花上半天到一天的时间来游览。抵达岚山后，你可以先从Torokko嵯峨站乘坐嵯峨野浪漫小火车至Torokko龟冈站，饱览沿途动人的景色，然后再坐小火车返回至Torokko岚山站（起点的前一站）下车，接着顺道步行去游览嵯峨野竹林、天龙寺等较为集中的景点，一路往南到标志性的渡月桥及岚山公园（中之岛地区）等地。若你时间比较充裕，在坐完单程小火车后还可以考虑从龟冈玩漂流或乘游船回到渡月桥，也可以在岚山车站附近租一辆自行车去嵯峨以北转转。当然，你也可以先游览岚山的寺庙、神社，把小火车观光作为当日行程的最后部分，再直接坐JR等轨道交通返回京都市区。标志性景观——渡月桥横跨桂川的渡月桥是岚山的标志性景观，保留着木造结构的桥身与背后树木繁茂的群山构成一幅美不胜收的山水画卷。<br>7公里多的路程慢慢开，全程25分钟，方便仔细看两遍的风景，全车木制座椅很是复古，一共挂了五个车厢，不是雨天的话尽量去买到5号车厢的票，因为这是个开放式车厢，没有玻璃窗。<br>单程：620日元</p>
-<h3 id="祇王寺"><a href="#祇王寺" class="headerlink" title="祇王寺"></a>祇王寺</h3><p>是一处绿树环绕的安静寺庙，有一个苍苔满地的园林。树木生长得相当茂盛，因此寺庙经常被浓荫覆盖。庙内有一尊大日如来佛像。其他雕像与该寺庙在日本历史和文学中的地位有关。<br>寺庙名中的祇王是一位很久以前的舞者，她爱上了平家家族强大的领袖平清盛。在他结束了这段关系时，祇王就到这个寺庙出家为尼度过了余生，随同她的有其姐姐、母亲以及另一位被平清盛抛弃的女子。大堂中供奉有几位女子和平清盛的木雕像。秋天的时候，寺庙周边的风景特别漂亮，变色的树叶与绿色的苔藓形成鲜明对比。<br>门票：300日元</p>
-<h3 id="天龙寺"><a href="#天龙寺" class="headerlink" title="天龙寺"></a>天龙寺</h3><p>建于1339年，为临济宗派天龙寺院派的总院，是足利尊氏将军为供养醍醐天皇而建的，在室町时代是京都五山的第一大山。天龙寺如今是岚山地区的世界文化遗产之一。庭园借龟山和岚山之景，将贵族文化的优雅和禅宗的玄妙融为一体，是国家特别历史遗迹。寺内安放有藤原時代的释迦如来坐像。天龙寺是一年四季都很有逛头的寺院，寺内的建筑繁多，包括东西向主轴线上的法堂殿、大方丈殿及曹源池庭园，轴线以南的禅堂、友云庵、龙门亭，和轴线以北的祥云阁、多宝殿、百花苑等。著名的岚山竹林位于寺院的北面，如果先走竹林小径可以从寺院的北门进入。反之，可以从渡月桥进入岚山，从寺院正门进入，参观完毕后从北门出，接着走竹林小径，参观野宫神社。天龙寺的门票很复古，上面印的就是代表性景色曹源池。门票也有多种选择，庭院参观券是500日元，可以游览曹源池庭园和百花苑。另外再加100日元就可以多参观大方丈、书院和多宝殿，性价比更高。秋天-次年春天，会有宝物云龙图的特别公开展，另需500日元的门票。出了天龙寺，正对面就有岚山区特有的豆腐宴。<br>门票：约500日元</p>
-<h3 id="金阁寺"><a href="#金阁寺" class="headerlink" title="金阁寺"></a>金阁寺</h3><p>金阁寺本名是鹿苑寺，由于寺内核心建筑舍利殿的外墙全部贴以金箔装饰，故昵称为“金阁寺”。寺院始建于1397年，原为足利义满将军（即动画《聪明的一休》中利将军的原型）的山庄，后改为禅寺“菩提所”。据说以金阁为中心的庭园为“极乐净土”，与寺前的镜湖池相互辉映，尤其在晴天风景极好，而这也成为了京都的象征。游客扎堆的景点，想避开人满为患的话，可以选择早上开园时或下午接近闭园时前往；天气好的话早晚的景色正是金阁寺最美的时刻。金阁寺园内可走动的范围不大，但等待合影留念的游客很多，建议合理安排时间。<br>门票：400日元</p>
-<h3 id="贵船神社"><a href="#贵船神社" class="headerlink" title="贵船神社"></a>贵船神社</h3><p>从平安京迁都的时候开始作为掌管水之神受到崇拜。神社因为丑时来参拜神社的女性多而知名，传说和泉式部也在这里祈祷过，希望能挽回丈夫之爱。</p>
-<h3 id="清水寺（寺庙-宗教场所）"><a href="#清水寺（寺庙-宗教场所）" class="headerlink" title="清水寺（寺庙 宗教场所）"></a>清水寺（寺庙 宗教场所）</h3><p>清水寺始建于778年，是京都最古老的寺院，后于1994年被列入世界文化遗产名录。清水寺所在的东山三十六峰，名为音羽山，这也是清水寺的山号。瀧的意思是瀑布，它是音羽山里的泉水，清水寺以此得名。游玩清水寺，除寺庙本身外还有一个乐趣就是在山下的小路漫步。这里的三年坂·二年坂以及附近的清水坂都是历史保护街区，沿路有各种餐饮店、土特产店，热闹非凡。八坂神社离清水寺很近，很多人是先游玩八坂神社再一路散步去清水寺，步程约1.5公里。</p>
-<h3 id="三年坂二年坂类（特色街区-建筑人文）"><a href="#三年坂二年坂类（特色街区-建筑人文）" class="headerlink" title="三年坂二年坂类（特色街区 建筑人文）"></a>三年坂二年坂类（特色街区 建筑人文）</h3><p>日本的京都清水寺附近的清水坂、二年坂和产宁坂是三条历史保护街区。二年坂和三年坂都是小小的石头坡道，偶尔有阶梯，二年坂据称于大同2年(807)建造完成，共有17级三年坂建造于大同3年(808)，连结清水坂与二年坂。由于这段坡道是通往祈求平安生产的子安塔(泰产寺)的参道，再加上日文读法中的生产平安“产宁”和“三年”发音接近，因此三年坂也被称为产宁坂。产宁坂石阶共有46级，两旁房舍多半是江户时期的町屋木造房子，沿途商家多半贩卖清水烧、京都特产古风瓷品店以及古意盎然的饮食店和纪念品店。<br>门票：free</p>
-<h3 id="伏见稻荷大社（历史建筑-建筑人文）"><a href="#伏见稻荷大社（历史建筑-建筑人文）" class="headerlink" title="伏见稻荷大社（历史建筑 建筑人文）"></a>伏见稻荷大社（历史建筑 建筑人文）</h3><p>伏见稻荷大社是京都古老的神社之一，而“千鸟居”是这座神社较有名的景观了。稻荷神社的鸟居的颜色是统一的红色，如果某些企业效益很好，会向神社敬献一座鸟居，因此稻荷神社的鸟居和其他神社不同，经常在门前排有一列鸟居，有大有小。较为壮观的是伏见稻荷大社，几千座鸟居分成几排，从山脚一直排列到山顶。<br>门票：free<br>用时:2-3h</p>
-<h3 id="八坂神社"><a href="#八坂神社" class="headerlink" title="八坂神社"></a>八坂神社</h3><p>日本全国约有3000多座八坂神社，而位于京都祇园的是八坂神社的总本社，也被称为祇园神社，是京都香火最旺的神社之一。这里每年7月都会举行热闹非凡的祇园祭，与东京的神田祭、大阪的天神祭并称为“日本三大祭”。神社入口八坂神社有好几个入口，如果你从四条通前往，过了东大路通便是神社的西楼门，朱红的色调十分亮眼。若是绕到南楼门外，还会看到一座巨大的石造鸟居。进门后可以先到旁边的“手水舍”去入乡随俗洗个手。舞殿来到神社中央的本殿前，有一座舞殿，是举行祭祀的舞台。你会注意到舞殿的四周都挂满了提灯，上面写着不同赞助商的名称，保佑他们生意兴隆。每当夜幕降临，这些提灯会被点亮，将舞殿点缀得特别华美。黄昏时欣赏落日要是正好在黄昏前来到八坂神社，你不仅能欣赏到落日余晖洒在朱漆大门上的美景，等到天黑后，还能感受灯光映照下宁静而耀眼的别样氛围。</p>
-<h3 id="祇园（特色街区-建筑人文）"><a href="#祇园（特色街区-建筑人文）" class="headerlink" title="祇园（特色街区 建筑人文）"></a>祇园（特色街区 建筑人文）</h3><p>祇园是京都的艺伎区，也是京都代表性的地区。白天，附近有7世纪的餐馆和茶馆可供消遣，路上也可以看到行色匆匆的艺伎与你擦间而过。而到了傍晚这个地方才真正生动起来，灯笼微明，灯光在纸窗后柔和地闪动，你可以见到实习期间的艺伎正匆忙地工作。<br>门票：free</p>
-<h3 id="鸭川"><a href="#鸭川" class="headerlink" title="鸭川"></a>鸭川</h3><p>鸭川是代表京都一条长31公里的一级河川，这条河流的水十分清澈，流穿过京都中央。从古代起居民已经住在河流的两旁，特别是西岸及南岸。在怀石料理餐厅边用餐聊天，可以坐在窗边望着鸭川。</p>
-<p>未完待续。。。</p>
 
           
         
