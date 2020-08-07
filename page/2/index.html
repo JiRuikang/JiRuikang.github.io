@@ -2,15 +2,13 @@
 
 
 
-  
 
-
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next " lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
+<meta name="theme-color" content="">
 
 
 
@@ -38,9 +36,15 @@
 
 
 
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+<link href="/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="//main.css?v=" rel="stylesheet" type="text/css" />
 
 
 
@@ -48,27 +52,7 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.3">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -96,29 +80,27 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
-    version: '5.1.3',
-    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    scheme: '',
+    version: '',
+    sidebar: "",
+    fancybox: ,
+    tabs: ,
+    motion: "",
     duoshuo: {
-      userId: '0',
+      userId: 'undefined',
       author: '博主'
     },
     algolia: {
       applicationID: '',
       apiKey: '',
       indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+      hits: "",
+      labels: ""
     }
   };
 </script>
 
 
-
-  <link rel="canonical" href="http://yoursite.com/page/2/"/>
 
 
 
@@ -140,10 +122,8 @@
 
   
   
-    
-  
 
-  <div class="container sidebar-position-left 
+  <div class="container  
   page-home">
     <div class="headband"></div>
 
@@ -177,42 +157,6 @@
   
 
   
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
 
   
 </nav>
@@ -242,12 +186,132 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/29/fe/ES5-point/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="June">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="June的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/29/fe/ES5-point/" itemprop="url">ES5不说再见</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="声明提升"><a href="#声明提升" class="headerlink" title="声明提升"></a>声明提升</h2><p>大部分语言的变量都是先声明后使用，但在es5中变量未声明时使用并不报错，因为声明提升到了执行代码前。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(a); // undefined</span><br><span class="line">var a = 1;</span><br></pre></td></tr></table></figure></p>
+<p>值得注意的是函数声明<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">在JavaScript中，一个变量名进入作用域的方式有 4 种：</span><br><span class="line"></span><br><span class="line">Language-defined：所有的作用域默认都会给出 this 和 arguments 两个变量名（global没有arguments）;</span><br><span class="line">Formal parameters（形参）：函数有形参，形参会添加到函数的作用域中;</span><br><span class="line">Function declarations（函数声明）：如 <span class="keyword">function</span> <span class="function"><span class="title">foo</span></span>() &#123;&#125;;</span><br><span class="line">Variable declarations（变量声明）：如 var foo，包括_函数表达式_。</span><br><span class="line">函数声明和变量声明总是会被移动（即hoist）到它们所在的作用域的顶部（这对你是透明的）。</span><br><span class="line">而变量的解析顺序（优先级），与变量进入作用域的4种方式的顺序一致。</span><br><span class="line"></span><br><span class="line">一个详细的例子：</span><br><span class="line"><span class="keyword">function</span> testOrder(arg) &#123;</span><br><span class="line">    console.log(arg); // arg是形参，不会被重新定义</span><br><span class="line">    console.log(a); // 因为函数声明比变量声明优先级高，所以这里a是函数</span><br><span class="line">    var arg = <span class="string">'hello'</span>; // var arg;变量声明被忽略， arg = <span class="string">'hello'</span>被执行</span><br><span class="line">    var a = 10; // var a;被忽视; a = 10被执行，a变成number</span><br><span class="line">    <span class="keyword">function</span> <span class="function"><span class="title">a</span></span>() &#123;</span><br><span class="line">        console.log(<span class="string">'fun'</span>);</span><br><span class="line">    &#125; // 被提升到作用域顶部</span><br><span class="line">    console.log(a); // 输出10</span><br><span class="line">    console.log(arg); // 输出hello</span><br><span class="line">&#125;;</span><br><span class="line">testOrder(<span class="string">'hi'</span>);</span><br><span class="line">/* 输出：</span><br><span class="line">hi</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">a</span></span>() &#123;</span><br><span class="line">        console.log(<span class="string">'fun'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">10</span><br><span class="line">hello</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">from:https://github.com/creeperyang/blog/issues/16</span><br></pre></td></tr></table></figure></p>
+<h2 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h2><p>作用域是指执行到当前代码时的上下文，或者说是环境。有全局作用域：声明在函数体外变量；函数作用域：声明在函数体中的变量，但凡是声明时没有var修饰的变量，均当做全局变量。<br>es5没有块级作用域，只有函数级作用域，函数外面的变量函数里面可以找到，函数里面的变量函数外面找不到。</p>
+<h2 id="变量生存周期"><a href="#变量生存周期" class="headerlink" title="变量生存周期"></a>变量生存周期</h2><p>全局变量，生命周期是永久的。局部变量，当定义该变量的函数调用结束时，该变量就会被垃圾回收机制回收而销毁。再次调用该函数时又会重新定义了一个新变量。</p>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><h3 id="是什么？"><a href="#是什么？" class="headerlink" title="是什么？"></a>是什么？</h3><p>是函数和声明该函数的词法环境的组合<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//父函数</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">superFn</span></span>()&#123;</span><br><span class="line">// 局部变量</span><br><span class="line">var _super_a = 1;</span><br><span class="line"></span><br><span class="line">var subFn = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">  _super_a++;</span><br><span class="line">  alert(<span class="string">'_super_a: '</span> + _super_a);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">return</span> subFn;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// superFn() 得到的是subFn，superFn()()等于subFn()</span><br><span class="line">superFn()();</span><br></pre></td></tr></table></figure></p>
+<p>无论执行多少次superFn()()，永远输出’_super_a:2’，因为superFn()()的词法环境永远是var _super_a = 1;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">//父函数</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">superFn</span></span>()&#123;</span><br><span class="line">// 局部变量</span><br><span class="line">var _super_a = 1;</span><br><span class="line"></span><br><span class="line">var subFn = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">  _super_a++;</span><br><span class="line">  alert(<span class="string">'_super_a: '</span> + _super_a);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">return</span> subFn;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// superFn() 得到的是subFn，superFn()()等于subFn()</span><br><span class="line">var s = superFn();</span><br><span class="line">s()</span><br><span class="line">s()</span><br></pre></td></tr></table></figure></p>
+<p>第一个s()执行输出’_super_a:2’，第二个s()执行输出’_super_a:3’，因为s()的词法环境是同一个superFn()<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">　　var name = <span class="string">"The Window"</span>;</span><br><span class="line"></span><br><span class="line">　　var object = &#123;</span><br><span class="line">　　　　name : <span class="string">"My Object"</span>,</span><br><span class="line"></span><br><span class="line">　　　　getNameFunc : <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">　　　　　　var that = this;</span><br><span class="line">　　　　　　<span class="built_in">return</span> <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">　　　　　　　　<span class="built_in">return</span> that.name;</span><br><span class="line">　　　　　　&#125;;</span><br><span class="line"></span><br><span class="line">　　　　&#125;</span><br><span class="line"></span><br><span class="line">　　&#125;;</span><br><span class="line"></span><br><span class="line">　　alert(object.getNameFunc()());</span><br></pre></td></tr></table></figure></p>
+<p>代码执行后输出’My Object’，因为object.getNameFunc()()的词法环境中this指向object</p>
+<h3 id="为什么？"><a href="#为什么？" class="headerlink" title="为什么？"></a>为什么？</h3><p>局部变量无法共享和长久的保存，而全局变量可能造成变量污染，所以我们希望有一种机制既可以长久的保存变量又不会造成全局污染。块级作用域可以做到，但ES5没有块级作用域的概念，所以出现了闭包。使用闭包可以在JavaScript中模拟块级作用域，可以用于在对象中创建私有变量。<br>闭包的生存周期等同于全局变量，是永久的，所以闭包使用不当会导致内存泄漏，通常手动将变量设置为null来结束闭包的生命周期。</p>
+<h3 id="怎么办？"><a href="#怎么办？" class="headerlink" title="怎么办？"></a>怎么办？</h3><p>因为函数是JavaScript中唯一拥有自身作用域的结构，因此闭包的创建依赖于函数，具体请看如下解释。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">作者：王殊</span><br><span class="line">链接：https://www.zhihu.com/question/19554716/answer/146795877</span><br><span class="line">来源：知乎</span><br><span class="line">著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</span><br><span class="line"></span><br><span class="line">要真正理解JavaScript里的闭包，就一定要脱离能看得见的js代码，看看在js引擎里，一个函数的创建和执行到底发生了什么，每一个变量名又是如何解析的。</span><br><span class="line"></span><br><span class="line">首先，每一个函数都有一个隐藏的属性[[Scope]]，这个属性保存着函数的作用域链，它本质上是一个集合，它的每个值引用一个数据的集合。</span><br><span class="line">函数中的变量名解析，实质上就是在[[Scope]]引用的每一个数据的集合里查找同名的键，如果找到了，就读取这个键对应的值，如果没有，就触发异常。</span><br><span class="line"></span><br><span class="line">当一个函数被创建的时候，如果这个函数形式上没有父函数，则[[Scope]]属性的第一个值会引用当前的全局上下文，所有全局变量及其存储的数据都在这个集合里。</span><br><span class="line">此时[[Scope]]属性如下：</span><br><span class="line">[    (Global Context)]</span><br><span class="line">当一个函数被调用的时候，会创建一个Execute context，即运行时上下文，它存储调用该函数的对象，函数的参数数组，函数的局部变量（值还未定义），该集合会被压入[[Scope]]属性，此时[[Scope]]属性如下：</span><br><span class="line">[    (Execute context),    (Global Context)]</span><br><span class="line">当一个函数返回的时候，引擎只是去除[[Scope]]属性中对运行时上下文的引用，并没有立即销毁它。此时运行时上下文没有任何引用了，符合了被销毁的条件，在将来的某个时刻会被垃圾收集器销毁。此时[[Scope]]属性如下：</span><br><span class="line">[    (Global Context)]</span><br><span class="line"></span><br><span class="line">好了，我们再看看，如果一个函数创建的时候存在父函数会是什么情形：当一个子函数被创建时，显然，这个创建是父函数的执行导致的，所以当子函数创建时，父函数已经处于执行阶段，所以父函数的执行上下文已经创建了。同时，因为子函数也在父函数的局部变量作用域内，所以，子函数在创建的时候，除了要引用全局上下文，也需要引用父函数的执行上下文，否则子函数就无法访问父函数的局部变量，违背了设计的要求。此时两个函数的[[Scope]]属性如下：</span><br><span class="line">父函数：[    (Execute context),    (Global Context)]</span><br><span class="line">子函数：[    (Execute context),//这里引用的是父函数的执行上下文，自身的执行上下文此时还未创建。</span><br><span class="line"> (Global Context)]</span><br><span class="line"> 当一个子函数执行时，因为它同样是函数，所以它同样需要创建自己的执行上下文，当它返回的时候，同样也只解除[[Scope]]属性中对自身执行上下文的引用，对父函数的执行上下文的引用并没有解除，这意味着，父函数的执行上下文与子函数本身共存亡了。所以，为什么父函数的局部变量没有被销毁？因为它们所在的执行上下文还被子函数的[[Scope]]属性引用着，只要子函数还存在引用，垃圾收集器就不会销毁它们所在的执行上下文。注意，因为父函数已经执行完毕了，所以父函数的执行上下文中的局部变量如果有赋值，那此时这些变量也已经有了相应的值。另外，因为父函数的局部变量并不在全局上下文中，所以它只能在子函数的变量解析中被访问，自然而然就相当于它们是子函数私有的了。</span><br></pre></td></tr></table></figure></p>
+<h2 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h2><p>垃圾回收是一种自动的内存管理机制，浏览器将不再使用的内存清除，寻找不再使用的内存主要有两种方式：引用计数和标记清除。<br>引用计数的策略是将“对象是否不再需要”简化成“对象有没有其他对象引用到它”，如果没有对象引用这个对象，那么这个对象将会被回收。标记清除是JavaScript中最常见的垃圾回收方式。为什么说这是种最常见的方法，因为从2012年起，所有现代浏览器都使用了标记-清除的垃圾回收方法，定期的，垃圾回收期将从这个全局对象开始，找所有从这个全局对象开始引用的对象，再找这些对象引用的对象…对这些活着的对象进行标记，这是标记阶段。清除阶段就是清除那些没有被标记的对象。<br>内存泄漏是指计算机可用的内存越来越少，主要是因为程序不能释放那些不再使用的内存，一旦数据不再使用，最好通过将其值设为 null 来释放其引用，这个方法被称为“解除引用”，解除一个值的引用不代表垃圾回收器会立即将这段内存回收，这样做的目的是让垃圾回收器在下一个回收周期到来时知道这段内存需要回收。另外，减少内存垃圾的另一个方法就是避免创建对象。<br>详细：<a href="https://zhuanlan.zhihu.com/p/23992332，值得一读。" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/23992332，值得一读。</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/02/life/travelHeb/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="June">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/june_my.jpeg">
+      <meta itemprop="image" content="/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -267,44 +331,12 @@
         <div class="post-meta">
           <span class="post-time">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-02T00:00:00+08:00">
-                2018-01-02
-              </time>
-            
 
             
 
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/life/" itemprop="url" rel="index">
-                    <span itemprop="name">生活</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -395,7 +427,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="June">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/june_my.jpeg">
+      <meta itemprop="image" content="/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -415,44 +447,12 @@
         <div class="post-meta">
           <span class="post-time">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-25T00:00:00+08:00">
-                2017-11-25
-              </time>
-            
 
             
 
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/fe/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -540,7 +540,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="June">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/june_my.jpeg">
+      <meta itemprop="image" content="/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -560,44 +560,12 @@
         <div class="post-meta">
           <span class="post-time">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-20T00:00:00+08:00">
-                2017-11-20
-              </time>
-            
 
             
 
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/tool/" itemprop="url" rel="index">
-                    <span itemprop="name">工具</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -682,154 +650,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/01/life/travelDq/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="June">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/june_my.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="June的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/01/life/travelDq/" itemprop="url">旅行-香格里拉</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-01T00:00:00+08:00">
-                2017-06-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/life/" itemprop="url" rel="index">
-                    <span itemprop="name">生活</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="/assets/life/travel-dq/pdc5.jpeg" alt="香格里拉"><br>看过了《冈仁波齐》，把自己的迪庆之行比作朝圣未免有辱朝圣二字，但我的确是带着一颗敬畏心而来。从丽江到迪庆有5小时的车程，我们翻山越岭而来，只盼一撇香格里拉。<br>夜幕降临的时候我们到达了迪庆县城的宾馆，放下行李，就去土司家吃藏餐了。马奶酒和青稞面吃不习惯，吃完饭看了藏族朋友们的表演，大概八点就回去休息了。<br><img src="/assets/life/travel-dq/pdc3.jpeg" alt="香格里拉"><br>第二天八点出发去石卡雪山，没有驶出县城时，可以看到路边三两行人，大都是送孩子上学的藏族女人，穿着长袖长袍、头戴艳丽头巾、腰间系着彩色围裙。开出县城后，一路上就没看到什么车和人了。大约半小时到了蓝月山谷，也就到了石卡雪山脚下，索道几乎到山顶了。《消失的地平线》中，香格里拉与外界交换东西的地方就叫蓝月山谷，这里应该是根据书里所讲后取的名字。<br><img src="/assets/life/travel-dq/sk.jpeg" alt="香格里拉"><br>大约快到中午，从石卡雪山上下来，下一站是我最期待的普达措国家森林公园。在停车场迎接我的是三两成群的藏香猪，司机扎西说，这些小猪一贯爱抢游客手里的东西。<br><img src="/assets/life/travel-dq/pdc1.jpeg" alt="香格里拉"><br>在普达措徒步一下午，秀丽的景色喂饱了眼睛，终于不枉此行。普达措和我所在的世界完全不同，我的世界声色犬马、匆匆忙忙，在这里时间是悠长的、甚至静止的。<br><img src="/assets/life/travel-dq/pdc6.jpeg" alt="香格里拉"><br><img src="/assets/life/travel-dq/pdc2.jpeg" alt="香格里拉"><br>因为普达措和蓝月山谷遗失绝尘的美，把迪庆称作香格里拉，我心里是认同的。<br>德钦太远，没有去到飞来寺，没有看到梅里雪山，实属遗憾。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/01/fe/first-vue/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="June">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/june_my.jpeg">
+      <meta itemprop="image" content="/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -849,44 +675,12 @@
         <div class="post-meta">
           <span class="post-time">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-01T00:00:00+08:00">
-                2017-06-01
-              </time>
-            
 
             
 
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/fe/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -1067,12 +861,122 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/01/life/travelDq/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="June">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="June的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/01/life/travelDq/" itemprop="url">旅行-香格里拉</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="/assets/life/travel-dq/pdc5.jpeg" alt="香格里拉"><br>看过了《冈仁波齐》，把自己的迪庆之行比作朝圣未免有辱朝圣二字，但我的确是带着一颗敬畏心而来。从丽江到迪庆有5小时的车程，我们翻山越岭而来，只盼一撇香格里拉。<br>夜幕降临的时候我们到达了迪庆县城的宾馆，放下行李，就去土司家吃藏餐了。马奶酒和青稞面吃不习惯，吃完饭看了藏族朋友们的表演，大概八点就回去休息了。<br><img src="/assets/life/travel-dq/pdc3.jpeg" alt="香格里拉"><br>第二天八点出发去石卡雪山，没有驶出县城时，可以看到路边三两行人，大都是送孩子上学的藏族女人，穿着长袖长袍、头戴艳丽头巾、腰间系着彩色围裙。开出县城后，一路上就没看到什么车和人了。大约半小时到了蓝月山谷，也就到了石卡雪山脚下，索道几乎到山顶了。《消失的地平线》中，香格里拉与外界交换东西的地方就叫蓝月山谷，这里应该是根据书里所讲后取的名字。<br><img src="/assets/life/travel-dq/sk.jpeg" alt="香格里拉"><br>大约快到中午，从石卡雪山上下来，下一站是我最期待的普达措国家森林公园。在停车场迎接我的是三两成群的藏香猪，司机扎西说，这些小猪一贯爱抢游客手里的东西。<br><img src="/assets/life/travel-dq/pdc1.jpeg" alt="香格里拉"><br>在普达措徒步一下午，秀丽的景色喂饱了眼睛，终于不枉此行。普达措和我所在的世界完全不同，我的世界声色犬马、匆匆忙忙，在这里时间是悠长的、甚至静止的。<br><img src="/assets/life/travel-dq/pdc6.jpeg" alt="香格里拉"><br><img src="/assets/life/travel-dq/pdc2.jpeg" alt="香格里拉"><br>因为普达措和蓝月山谷遗失绝尘的美，把迪庆称作香格里拉，我心里是认同的。<br>德钦太远，没有去到飞来寺，没有看到梅里雪山，实属遗憾。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/28/life/travelYn/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="June">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/june_my.jpeg">
+      <meta itemprop="image" content="/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1092,44 +996,12 @@
         <div class="post-meta">
           <span class="post-time">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-28T00:00:00+08:00">
-                2017-05-28
-              </time>
-            
 
             
 
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/life/" itemprop="url" rel="index">
-                    <span itemprop="name">生活</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -1213,7 +1085,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="June">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/june_my.jpeg">
+      <meta itemprop="image" content="/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1233,44 +1105,12 @@
         <div class="post-meta">
           <span class="post-time">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-20T00:00:00+08:00">
-                2017-05-20
-              </time>
-            
 
             
 
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/tool/" itemprop="url" rel="index">
-                    <span itemprop="name">工具</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -1358,7 +1198,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="June">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/june_my.jpeg">
+      <meta itemprop="image" content="/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1378,44 +1218,12 @@
         <div class="post-meta">
           <span class="post-time">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-01T00:00:00+08:00">
-                2017-05-01
-              </time>
-            
 
             
 
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/life/" itemprop="url" rel="index">
-                    <span itemprop="name">生活</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -1502,7 +1310,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="June">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/june_my.jpeg">
+      <meta itemprop="image" content="/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1522,44 +1330,12 @@
         <div class="post-meta">
           <span class="post-time">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-02T00:00:00+08:00">
-                2017-01-02
-              </time>
-            
 
             
 
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/life/" itemprop="url" rel="index">
-                    <span itemprop="name">生活</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -1674,10 +1450,6 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="/images/june_my.jpeg"
-                alt="June" />
-            
               <p class="site-author-name" itemprop="name">June</p>
               <p class="site-description motion-element" itemprop="description">看得见远方，追的上路人</p>
           </div>
@@ -1687,9 +1459,9 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1713,14 +1485,6 @@
           
 
           <div class="links-of-author motion-element">
-            
-              
-                <span class="links-of-author-item">
-                  <a href="https://github.com/JiRuikang" target="_blank" title="GitHub">
-                    
-                      <i class="fa fa-fw fa-globe"></i>GitHub</a>
-                </span>
-              
             
           </div>
 
@@ -1751,7 +1515,7 @@
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">June</span>
 
@@ -1759,15 +1523,9 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
 
 
 
@@ -1811,8 +1569,6 @@
 
 
 
-  
-
 
 
 
@@ -1826,41 +1582,36 @@
 
   
   
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+    <script type="text/javascript" src="//jquery/index.js?v=2.1.3"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+    <script type="text/javascript" src="//fastclick/lib/fastclick.min.js?v=1.0.6"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+    <script type="text/javascript" src="//jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="//velocity/velocity.min.js?v=1.2.1"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+    <script type="text/javascript" src="//velocity/velocity.ui.min.js?v=1.2.1"></script>
   
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+  <script type="text/javascript" src="//src/utils.js?v="></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+  <script type="text/javascript" src="//src/motion.js?v="></script>
 
 
 
@@ -1872,7 +1623,7 @@
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+  <script type="text/javascript" src="//src/bootstrap.js?v="></script>
 
 
 
